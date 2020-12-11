@@ -11,7 +11,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Mercat-Concepcio/php_libraries/ti.php';
     <title><?php startblock('titulo') ?><?php endblock() ?></title>
     
     <!-- Librerías bootstrap -->
-    <link rel="stylesheet" href="../php_libraries/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../php_libraries/bootstrap/css/bootstrap.css">
     <script src="../php_libraries/bootstrap/js/jquery-3.5.1.min.js"></script>
     <script src="../php_libraries/bootstrap/js/popper.min.js"></script>
     <script src="../php_libraries/bootstrap/js/bootstrap.min.js"></script>
@@ -24,7 +24,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Mercat-Concepcio/php_libraries/ti.php';
 <body>
 
     <!-- NAV -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="z-index:100">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="z-index:100">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,8 +32,8 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Mercat-Concepcio/php_libraries/ti.php';
 
         <div class="collapse navbar-collapse" id="navbarColor02">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Inicio
+                <li class="nav-item ">
+                    <a class="nav-link <?php if($_SESSION['page']=='home'){echo 'active';}?>" href="#">Inicio
                         <span class="sr-only">(current)</span>
                     </a>
                 </li>
