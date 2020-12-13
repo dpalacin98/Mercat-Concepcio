@@ -26,8 +26,18 @@ Juegos
     <div class="juego">
       <!-- row puntos -->
       <div class="row row-puntos">
-        <h3>Score: <span id="result"></span></h3>
-        <h5><span id="suma"></span></h5>
+        <div class="col">
+          <h3>Score: <span id="result"></span></h3>
+        </div>
+        <div class="col">
+          <h5><span id="suma"></span></h5>
+        </div>
+        <div class="col">
+          <h4 id="seconds">Seconds left: </h4>
+        </div>
+        <div class="col">
+          <h4 id="time-left">60</h4>
+        </div>
       </div>
       <!-- row elementos -->
       <div class="row">
@@ -41,7 +51,8 @@ Juegos
         </div>
         <!-- row clientes -->
         <div class="row row-clientes">
-          <div class="grid-clientes"></div>
+          <div class="grid-clientes">
+          </div>
         </div>
       </div>
     </div>
