@@ -102,162 +102,86 @@ document.addEventListener('DOMContentLoaded', () => {
         {
             name: 'arandano',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/arandano-cliente.png'
+            img: '../media/fruta/fruta-cliente/arandano-cliente.png',
+            img_s: '../media/fruta/fruta-success/arandano-success.png',
+            img_e: '../media/fruta/fruta-error/arandano-error.png'
         },
         {
             name: 'cereza',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/cereza-cliente.png'
+            img: '../media/fruta/fruta-cliente/cereza-cliente.png',
+            img_s: '../media/fruta/fruta-success/cereza-success.png',
+            img_e: '../media/fruta/fruta-error/cereza-error.png'
         },
         {
             name: 'coco',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/coco-cliente.png'
+            img: '../media/fruta/fruta-cliente/coco-cliente.png',
+            img_s: '../media/fruta/fruta-success/coco-success.png',
+            img_e: '../media/fruta/fruta-error/coco-error.png'
         },
         {
             name: 'fresa',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/fresa-cliente.png'
+            img: '../media/fruta/fruta-cliente/fresa-cliente.png',
+            img_s: '../media/fruta/fruta-success/fresa-success.png',
+            img_e: '../media/fruta/fruta-error/fresa-error.png'
         },
         {
             name: 'mango',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/mango-cliente.png'
+            img: '../media/fruta/fruta-cliente/mango-cliente.png',
+            img_s: '../media/fruta/fruta-success/mango-success.png',
+            img_e: '../media/fruta/fruta-error/mango-error.png'
         },
         {
             name: 'naranja',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/naranja-cliente.png'
+            img: '../media/fruta/fruta-cliente/naranja-cliente.png',
+            img_s: '../media/fruta/fruta-success/naranja-success.png',
+            img_e: '../media/fruta/fruta-error/naranja-error.png'
         },
         {
             name: 'manzana',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/manzana-cliente.png'
+            img: '../media/fruta/fruta-cliente/manzana-cliente.png',
+            img_s: '../media/fruta/fruta-success/manzana-success.png',
+            img_e: '../media/fruta/fruta-error/manzana-error.png'
         },
         {
             name: 'pera',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/pera-cliente.png'
+            img: '../media/fruta/fruta-cliente/pera-cliente.png',
+            img_s: '../media/fruta/fruta-success/pera-success.png',
+            img_e: '../media/fruta/fruta-error/pera-error.png'
         },
         {
             name: 'pina',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/pina-cliente.png'
+            img: '../media/fruta/fruta-cliente/pina-cliente.png',
+            img_s: '../media/fruta/fruta-success/pina-success.png',
+            img_e: '../media/fruta/fruta-error/pina-error.png'
         },
         {
             name: 'platanos',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/platanos-cliente.png'
+            img: '../media/fruta/fruta-cliente/platanos-cliente.png',
+            img_s: '../media/fruta/fruta-success/platanos-success.png',
+            img_e: '../media/fruta/fruta-error/platanos-error.png'
         },
         {
             name: 'sandia',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/sandia-cliente.png'
+            img: '../media/fruta/fruta-cliente/sandia-cliente.png',
+            img_s: '../media/fruta/fruta-success/sandia-success.png',
+            img_e: '../media/fruta/fruta-error/sandia-error.png'
         },
         {
             name: 'uvas',
             tipo: 'demanda',
-            img: '../media/fruta/fruta-cliente/uvas-cliente.png'
-        }
-    ]
-    const productSuccess   = [
-        {
-            name: 'arandano',
-            img: '../media/fruta/fruta-success/arandano-success.png'
-        },
-        {
-            name: 'cereza',
-            img: '../media/fruta/fruta-success/cereza-success.png'
-        },
-        {
-            name: 'coco',
-            img: '../media/fruta/fruta-success/coco-success.png'
-        },
-        {
-            name: 'fresa',
-            img: '../media/fruta/fruta-success/fresa-success.png'
-        },
-        {
-            name: 'mango',
-            img: '../media/fruta/fruta-success/mango-success.png'
-        },
-        {
-            name: 'naranja',
-            img: '../media/fruta/fruta-success/naranja-success.png'
-        },
-        {
-            name: 'manzana',
-            img: '../media/fruta/fruta-success/manzana-success.png'
-        },
-        {
-            name: 'pera',
-            img: '../media/fruta/fruta-success/pera-success.png'
-        },
-        {
-            name: 'pina',
-            img: '../media/fruta/fruta-success/pina-success.png'
-        },
-        {
-            name: 'platanos',
-            img: '../media/fruta/fruta-success/platanos-success.png'
-        },
-        {
-            name: 'sandia',
-            img: '../media/fruta/fruta-success/sandia-success.png'
-        },
-        {
-            name: 'uvas',
-            img: '../media/fruta/fruta-success/uvas-success.png'
-        }
-    ]
-    const productError   = [
-        {
-            name: 'arandano',
-            img: '../media/fruta/fruta-error/arandano-error.png'
-        },
-        {
-            name: 'cereza',
-            img: '../media/fruta/fruta-error/cereza-error.png'
-        },
-        {
-            name: 'coco',
-            img: '../media/fruta/fruta-error/coco-error.png'
-        },
-        {
-            name: 'fresa',
-            img: '../media/fruta/fruta-error/fresa-error.png'
-        },
-        {
-            name: 'mango',
-            img: '../media/fruta/fruta-error/mango-error.png'
-        },
-        {
-            name: 'naranja',
-            img: '../media/fruta/fruta-error/naranja-error.png'
-        },
-        {
-            name: 'manzana',
-            img: '../media/fruta/fruta-error/manzana-error.png'
-        },
-        {
-            name: 'pera',
-            img: '../media/fruta/fruta-error/pera-error.png'
-        },
-        {
-            name: 'pina',
-            img: '../media/fruta/fruta-error/pina-error.png'
-        },
-        {
-            name: 'platanos',
-            img: '../media/fruta/fruta-error/platanos-error.png'
-        },
-        {
-            name: 'sandia',
-            img: '../media/fruta/fruta-error/sandia-error.png'
-        },
-        {
-            name: 'uvas',
-            img: '../media/fruta/fruta-error/uvas-error.png'
+            img: '../media/fruta/fruta-cliente/uvas-cliente.png',
+            img_s: '../media/fruta/fruta-success/uvas-success.png',
+            img_e: '../media/fruta/fruta-error/uvas-error.png'
         }
     ]
 
@@ -278,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
     var contador            = 1
     var id_cliente          = 0
     var id_producto         = 0
-    var nombre_buscar       = null
 
     //creamos la grid con los productos
     function createBoardProductos(){
@@ -341,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerId)
             alert('GAME OVER')
         };
-    };
+    }
     let timerId = setInterval(cuentaAtras, 1000)
     
 
@@ -363,36 +286,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //grid_clientes.removeChild(grid_clientes.childNodes[productDemandaId[0]])
             //grid_productos.removeChild(grid_productos.childNodes[productDemandaId[0]])
-            var id_producto_buscado = busquedaProducto()
-            //console.log(id_producto_buscado)
-            producto[productDemandaId[0]].setAttribute('src', productSuccess[id_producto_buscado].img)
-
-
+            
+            producto[productDemandaId[0]].setAttribute('src', productClienteArray[productDemandaId[0]].img_s)
         } else{ 
             sumaDisplay.textContent = ' + 0'
             document.getElementById("suma").style.visibility="visible"
             setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000)
-            var id_producto_buscado = busquedaProducto()
-            producto[productDemandaId[0]].setAttribute('src', productError[id_producto_buscado].img)
+            producto[productDemandaId[0]].setAttribute('src', productClienteArray[productDemandaId[0]].img_e)
         }      
 
         productChosen   = []
         productDemandaId = []
         productIdVenta    = []      
-    }
-
-    //buscamos el indice del array success//error para mostrar su imagen
-    function busquedaProducto(){
-        for (var indice in productSuccess){
-        
-            var nombre = productSuccess[indice].name;
-
-            if(nombre == nombre_buscar){
-            
-                var index = indice;
-            }
-        }
-        return index
     }
 
     //click productos
@@ -405,8 +310,6 @@ document.addEventListener('DOMContentLoaded', () => {
         //si es una demanda (pedido por el cliente) guardamos su nombre en el array productChosen
         if (productType === 'demanda') {       
             productChosen.push(productClienteArray[productId].name)
-            //guardo el nombre para buscarlo en la funcion busquedaProducto
-            nombre_buscar = productClienteArray[productId].name
             //guardamos sus id para poder trabajar con ella mas tarde
             productDemandaId.push(productId)
         }
