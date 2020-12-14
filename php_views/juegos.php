@@ -27,7 +27,7 @@ Juegos
       <!-- row puntos -->
       <div class="row row-puntos">
         <div class="col">
-          <h3>Score: <span id="result"></span></h3>
+          <h4>Score: <span id="result"></span></h4>
         </div>
         <div class="col">
           <h5><span id="suma"></span></h5>

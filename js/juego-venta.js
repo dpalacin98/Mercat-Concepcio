@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const clienteArray          = [
         {
             name: 'person1',
-            img: '../media/personas/person1.png'
+            img: '../media/personas/person.png'
         },
         {
             name: 'person2',
-            img: '../media/personas/person4.png'
+            img: '../media/personas/person2.png'
         },
         {
             name: 'person3',
@@ -95,73 +95,174 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name:'person5',
-            img:'../media/personas/person1.png'
+            img:'../media/personas/person5.png'
         }
     ]
     const productClienteArray   = [
         {
             name: 'arandano',
             tipo: 'demanda',
-            img: '../media/fruta/arandano-cliente.png'
+            img: '../media/fruta/fruta-cliente/arandano-cliente.png'
         },
         {
             name: 'cereza',
             tipo: 'demanda',
-            img: '../media/fruta/cereza-cliente.png'
+            img: '../media/fruta/fruta-cliente/cereza-cliente.png'
         },
         {
             name: 'coco',
             tipo: 'demanda',
-            img: '../media/fruta/coco-cliente.png'
+            img: '../media/fruta/fruta-cliente/coco-cliente.png'
         },
         {
             name: 'fresa',
             tipo: 'demanda',
-            img: '../media/fruta/fresa-cliente.png'
+            img: '../media/fruta/fruta-cliente/fresa-cliente.png'
         },
         {
             name: 'mango',
             tipo: 'demanda',
-            img: '../media/fruta/mango-cliente.png'
+            img: '../media/fruta/fruta-cliente/mango-cliente.png'
         },
         {
             name: 'naranja',
             tipo: 'demanda',
-            img: '../media/fruta/naranja-cliente.png'
+            img: '../media/fruta/fruta-cliente/naranja-cliente.png'
         },
         {
             name: 'manzana',
             tipo: 'demanda',
-            img: '../media/fruta/manzana-cliente.png'
+            img: '../media/fruta/fruta-cliente/manzana-cliente.png'
         },
         {
             name: 'pera',
             tipo: 'demanda',
-            img: '../media/fruta/pera-cliente.png'
+            img: '../media/fruta/fruta-cliente/pera-cliente.png'
         },
         {
             name: 'pina',
             tipo: 'demanda',
-            img: '../media/fruta/pina-cliente.png'
+            img: '../media/fruta/fruta-cliente/pina-cliente.png'
         },
         {
             name: 'platanos',
             tipo: 'demanda',
-            img: '../media/fruta/platanos-cliente.png'
+            img: '../media/fruta/fruta-cliente/platanos-cliente.png'
         },
         {
             name: 'sandia',
             tipo: 'demanda',
-            img: '../media/fruta/sandia-cliente.png'
+            img: '../media/fruta/fruta-cliente/sandia-cliente.png'
         },
         {
             name: 'uvas',
             tipo: 'demanda',
-            img: '../media/fruta/uvas-cliente.png'
+            img: '../media/fruta/fruta-cliente/uvas-cliente.png'
+        }
+    ]
+    const productSuccess   = [
+        {
+            name: 'arandano',
+            img: '../media/fruta/fruta-success/arandano-success.png'
+        },
+        {
+            name: 'cereza',
+            img: '../media/fruta/fruta-success/cereza-success.png'
+        },
+        {
+            name: 'coco',
+            img: '../media/fruta/fruta-success/coco-success.png'
+        },
+        {
+            name: 'fresa',
+            img: '../media/fruta/fruta-success/fresa-success.png'
+        },
+        {
+            name: 'mango',
+            img: '../media/fruta/fruta-success/mango-success.png'
+        },
+        {
+            name: 'naranja',
+            img: '../media/fruta/fruta-success/naranja-success.png'
+        },
+        {
+            name: 'manzana',
+            img: '../media/fruta/fruta-success/manzana-success.png'
+        },
+        {
+            name: 'pera',
+            img: '../media/fruta/fruta-success/pera-success.png'
+        },
+        {
+            name: 'pina',
+            img: '../media/fruta/fruta-success/pina-success.png'
+        },
+        {
+            name: 'platanos',
+            img: '../media/fruta/fruta-success/platanos-success.png'
+        },
+        {
+            name: 'sandia',
+            img: '../media/fruta/fruta-success/sandia-success.png'
+        },
+        {
+            name: 'uvas',
+            img: '../media/fruta/fruta-success/uvas-success.png'
+        }
+    ]
+    const productError   = [
+        {
+            name: 'arandano',
+            img: '../media/fruta/fruta-error/arandano-error.png'
+        },
+        {
+            name: 'cereza',
+            img: '../media/fruta/fruta-error/cereza-error.png'
+        },
+        {
+            name: 'coco',
+            img: '../media/fruta/fruta-error/coco-error.png'
+        },
+        {
+            name: 'fresa',
+            img: '../media/fruta/fruta-error/fresa-error.png'
+        },
+        {
+            name: 'mango',
+            img: '../media/fruta/fruta-error/mango-error.png'
+        },
+        {
+            name: 'naranja',
+            img: '../media/fruta/fruta-error/naranja-error.png'
+        },
+        {
+            name: 'manzana',
+            img: '../media/fruta/fruta-error/manzana-error.png'
+        },
+        {
+            name: 'pera',
+            img: '../media/fruta/fruta-error/pera-error.png'
+        },
+        {
+            name: 'pina',
+            img: '../media/fruta/fruta-error/pina-error.png'
+        },
+        {
+            name: 'platanos',
+            img: '../media/fruta/fruta-error/platanos-error.png'
+        },
+        {
+            name: 'sandia',
+            img: '../media/fruta/fruta-error/sandia-error.png'
+        },
+        {
+            name: 'uvas',
+            img: '../media/fruta/fruta-error/uvas-error.png'
         }
     ]
 
     productClienteArray.sort(()     => 0.5 - Math.random())
+
     const grid              = document.querySelector('.grid')
     const grid_productos    = document.querySelector('.grid-productos')
     const grid_clientes     = document.querySelector('.grid-clientes')
@@ -177,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var contador            = 1
     var id_cliente          = 0
     var id_producto         = 0
+    var nombre_buscar       = null
 
     //creamos la grid con los productos
     function createBoardProductos(){
@@ -211,6 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //creamos el producto cliente junto al cliente
             var producto_cliente = document.createElement('img')
             producto_cliente.setAttribute('id', id_cliente)
+            producto_cliente.setAttribute('class', 'producto-cliente')
             producto_cliente.setAttribute('src', productClienteArray[id_producto].img)
             producto_cliente.setAttribute('tipo', productClienteArray[id_producto].tipo)
             producto_cliente.addEventListener('click', clickProductos)
@@ -244,9 +347,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //comprobamos si los productos son los correctos y hacen match
     function checkForMatch(){
+        //guardamos los productos del cliente en producto
+        var producto = document.querySelectorAll('.producto-cliente')
         //guardamos los nombres por separados para poder compararlos
         const optionOneId = productChosen[0]
         const optionTwoId = productChosen[1]
+
         if(optionOneId === optionTwoId){
             //si hemos hecho match sumamos el precio del producto a nuestra ganancia
             ganancia    = ganancia + parseFloat(productArray[productIdVenta[0]].precio)
@@ -255,20 +361,38 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById("suma").style.visibility="visible"
             setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000)
 
-
             //grid_clientes.removeChild(grid_clientes.childNodes[productDemandaId[0]])
             //grid_productos.removeChild(grid_productos.childNodes[productDemandaId[0]])
-            
+            var id_producto_buscado = busquedaProducto()
+            //console.log(id_producto_buscado)
+            producto[productDemandaId[0]].setAttribute('src', productSuccess[id_producto_buscado].img)
+
 
         } else{ 
             sumaDisplay.textContent = ' + 0'
             document.getElementById("suma").style.visibility="visible"
-            setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000)       
+            setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000)
+            var id_producto_buscado = busquedaProducto()
+            producto[productDemandaId[0]].setAttribute('src', productError[id_producto_buscado].img)
         }      
 
         productChosen   = []
         productDemandaId = []
         productIdVenta    = []      
+    }
+
+    //buscamos el indice del array success//error para mostrar su imagen
+    function busquedaProducto(){
+        for (var indice in productSuccess){
+        
+            var nombre = productSuccess[indice].name;
+
+            if(nombre == nombre_buscar){
+            
+                var index = indice;
+            }
+        }
+        return index
     }
 
     //click productos
@@ -281,6 +405,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //si es una demanda (pedido por el cliente) guardamos su nombre en el array productChosen
         if (productType === 'demanda') {       
             productChosen.push(productClienteArray[productId].name)
+            //guardo el nombre para buscarlo en la funcion busquedaProducto
+            nombre_buscar = productClienteArray[productId].name
             //guardamos sus id para poder trabajar con ella mas tarde
             productDemandaId.push(productId)
         }
