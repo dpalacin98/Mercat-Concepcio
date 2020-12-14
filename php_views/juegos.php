@@ -19,7 +19,7 @@ Juegos
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
-    <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
+    <div class="col"><button id="BtnStart">Start Game</button></div>
   </div>
   <div class="container">
       <!-- DIV JUEGO -->
