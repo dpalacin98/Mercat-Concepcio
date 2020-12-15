@@ -5,10 +5,9 @@
 Juegos
 <?php endblock() ?>
 
-<!--Insertamos la css y js-->
+<!--Insertamos la css-->
 <?php startblock('css');?>
 <link rel="stylesheet" href="../style/juegos.css">
-<script src="../js/juego-venta.js"></script>
 <?php endblock() ?>
 
 <!--Main-->
@@ -63,3 +62,8 @@ Juegos
   </div>
 </div>
  <?php endblock()?>
+
+<!--Insertamos js-->
+<?php startblock('js');?>
+<script src="../js/juego-venta.js"></script>
+<?php endblock() ?>
