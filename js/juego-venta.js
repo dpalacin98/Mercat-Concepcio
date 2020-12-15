@@ -101,84 +101,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const productClienteArray   = [
         {
             name: 'arandano',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/arandano-cliente.png',
             img_s: '../media/fruta/fruta-success/arandano-success.png',
             img_e: '../media/fruta/fruta-error/arandano-error.png'
         },
         {
             name: 'cereza',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/cereza-cliente.png',
             img_s: '../media/fruta/fruta-success/cereza-success.png',
             img_e: '../media/fruta/fruta-error/cereza-error.png'
         },
         {
             name: 'coco',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/coco-cliente.png',
             img_s: '../media/fruta/fruta-success/coco-success.png',
             img_e: '../media/fruta/fruta-error/coco-error.png'
         },
         {
             name: 'fresa',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/fresa-cliente.png',
             img_s: '../media/fruta/fruta-success/fresa-success.png',
             img_e: '../media/fruta/fruta-error/fresa-error.png'
         },
         {
             name: 'mango',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/mango-cliente.png',
             img_s: '../media/fruta/fruta-success/mango-success.png',
             img_e: '../media/fruta/fruta-error/mango-error.png'
         },
         {
             name: 'naranja',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/naranja-cliente.png',
             img_s: '../media/fruta/fruta-success/naranja-success.png',
             img_e: '../media/fruta/fruta-error/naranja-error.png'
         },
         {
             name: 'manzana',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/manzana-cliente.png',
             img_s: '../media/fruta/fruta-success/manzana-success.png',
             img_e: '../media/fruta/fruta-error/manzana-error.png'
         },
         {
             name: 'pera',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/pera-cliente.png',
             img_s: '../media/fruta/fruta-success/pera-success.png',
             img_e: '../media/fruta/fruta-error/pera-error.png'
         },
         {
             name: 'pina',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/pina-cliente.png',
             img_s: '../media/fruta/fruta-success/pina-success.png',
             img_e: '../media/fruta/fruta-error/pina-error.png'
         },
         {
             name: 'platanos',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/platanos-cliente.png',
             img_s: '../media/fruta/fruta-success/platanos-success.png',
             img_e: '../media/fruta/fruta-error/platanos-error.png'
         },
         {
             name: 'sandia',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/sandia-cliente.png',
             img_s: '../media/fruta/fruta-success/sandia-success.png',
             img_e: '../media/fruta/fruta-error/sandia-error.png'
         },
         {
             name: 'uvas',
-            tipo: 'demanda',
             img: '../media/fruta/fruta-cliente/uvas-cliente.png',
             img_s: '../media/fruta/fruta-success/uvas-success.png',
             img_e: '../media/fruta/fruta-error/uvas-error.png'
@@ -186,23 +174,22 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     productClienteArray.sort(()     => 0.5 - Math.random());
+    const grid                      = document.querySelector('.grid');
+    const grid_productos            = document.querySelector('.grid-productos');
+    const grid_clientes             = document.querySelector('.grid-clientes');
+    const timeLeft                  = document.querySelector('#time-left');
+    const resultDisplay             = document.querySelector('#result');
+    const sumaDisplay               = document.querySelector('#suma');
 
-    const grid              = document.querySelector('.grid');
-    const grid_productos    = document.querySelector('.grid-productos');
-    const grid_clientes     = document.querySelector('.grid-clientes');
-    const timeLeft          = document.querySelector('#time-left');
-    const resultDisplay     = document.querySelector('#result');
-    const sumaDisplay       = document.querySelector('#suma');
-
-    let currentTime         = timeLeft.textContent;
-    var productChosen       = [];
-    var productDemandaId    = [];
-    var productIdVenta      = [];
-    var ganancia            = 0;
-    var contador            = 1;
-    var id_cliente          = 0;
-    var id_producto         = 0;
-
+    let currentTime                 = timeLeft.textContent;
+    var productChosen               = [];
+    var productDemandaId            = [];
+    var productIdVenta              = [];
+    var ganancia                    = 0;
+    var contador                    = 1;
+    var id_cliente                  = 0;
+    var id_producto                 = 0;
+    var productClass                = null;
 
 
     function startGame(){
@@ -221,28 +208,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //CREATE CLIENTE
         function timerClientes(){
-            //console.log(id_cliente)
-            //console.log(id_producto)
+
+            //añadimos un cliente cada X segundos
             if (contador == 2) {
+                //si hay 5 clientes en la tabla paramos
                 if (id_cliente == 5) {
                     //para que solo muestre 5 DE MOMENTO
                     contador = 30;
                 }
+                //si hemos llegado a 12 significa que ya hemos administrado todos los productos disponibles
                 if(id_producto == 12){
                     id_producto = 0;
                 }
                 //creamos nuestro cliente 
                 var cliente = document.createElement('img');
                 cliente.setAttribute('id', id_cliente);
+                cliente.setAttribute('class', 'cliente' + id_cliente);
                 cliente.setAttribute('src', clienteArray[id_cliente].img);
                 grid_clientes.appendChild(cliente);
-
                 //creamos el producto cliente junto al cliente
                 var producto_cliente = document.createElement('img');
                 producto_cliente.setAttribute('id', id_cliente);
-                producto_cliente.setAttribute('class', 'producto-cliente');
+                producto_cliente.setAttribute('class', 'producto-cliente' + id_cliente);
                 producto_cliente.setAttribute('src', productClienteArray[id_producto].img);
-                producto_cliente.setAttribute('tipo', productClienteArray[id_producto].tipo);
+                producto_cliente.setAttribute('tipo', 'demanda');
                 producto_cliente.addEventListener('click', clickProductos);
                 grid_productos.appendChild(producto_cliente);
 
@@ -265,17 +254,22 @@ document.addEventListener('DOMContentLoaded', () => {
             currentTime--;
             timeLeft.textContent = currentTime;
             if (currentTime === 0) {
-                clearInterval(timerId);
+                clearInterval(timer);
                 alert('GAME OVER');
             };
         }
-        let timerId = setInterval(cuentaAtras, 1000);
+        let timer = setInterval(cuentaAtras, 1000);
 
         //comprobamos si los productos son los correctos y hacen match
         function checkForMatch(){
-            //guardamos los productos del cliente en producto
-            var producto = document.querySelectorAll('.producto-cliente');
-            //guardamos los nombres por separados para poder compararlos
+            //guardamos el producto del cliente en productoChosen
+            var productoChosen = document.querySelector(productClass);
+
+            //usamos el id del producto para guardar la clase del cliente
+            clientClass = '.cliente' + productDemandaId[0];
+            var clientChosen   = document.querySelector(clientClass);
+
+            //guardamos los nombres de los productos por separados para poder compararlos
             const optionOneId = productChosen[0];
             const optionTwoId = productChosen[1];
 
@@ -283,52 +277,58 @@ document.addEventListener('DOMContentLoaded', () => {
                 //si hemos hecho match sumamos el precio del producto a nuestra ganancia
                 ganancia    = ganancia + parseFloat(productArray[productIdVenta[0]].precio);
                 resultDisplay.textContent   = ganancia + ' $ ';
+                //mostramos el precio que ganamos con este match y luego lo ponemos en hidden hasta el siguiente
                 sumaDisplay.textContent     = ' +' + parseFloat(productArray[productIdVenta[0]].precio);
                 document.getElementById("suma").style.visibility="visible";
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
-                producto[productDemandaId[0]].setAttribute('src', productClienteArray[productDemandaId[0]].img_s);
-
+                //como el match ha sido correcto, cambiamos la imagen a img_success
+                productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_s);
+                productoChosen.remove();
+                clientChosen.remove();
             } else{ 
+                //si no hace match no sumamos nada, mostramos que suma 0$
                 sumaDisplay.textContent = ' + 0';
                 document.getElementById("suma").style.visibility="visible";
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
-                producto[productDemandaId[0]].setAttribute('src', productClienteArray[productDemandaId[0]].img_e);
+                //como el match NO ha sido correcto, cambiamos la imagen a img_error
+                productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_e);
             }      
-
+            //vaciamos los array para el siguiente producto
             productChosen   = [];
             productDemandaId = [];
             productIdVenta    = [];
         }
 
-        //click productos
+        //cuando hacemos click en un producto
         function clickProductos(){
-        //aqui guardamos el id del producto
-        var productId   = this.getAttribute('id');
-        //aqui guardamos su tipo
-        var productType = this.getAttribute('tipo');
+            //aqui guardamos el id del producto
+            var productId   = this.getAttribute('id');
+            //aqui guardamos su tipo
+            var productType = this.getAttribute('tipo');
 
-        //si es una demanda (pedido por el cliente) guardamos su nombre en el array productChosen
-        if (productType === 'demanda') {       
-            productChosen.push(productClienteArray[productId].name);
-            //guardamos sus id para poder trabajar con ella mas tarde
-            productDemandaId.push(productId);
-        }
-        //si no es demanda es que es tipo producto y guardamos su nombre en el array productChosen
-        else{
-            productChosen.push(productArray[productId].name);       
-            productIdVenta.push(productId);
-        }
-        //si hay dos elementos los comprobamos
-        if(productChosen.length === 2){
-            //console.log(productDemandaId[0])
-            //console.log(productIdVenta[0])
-            setTimeout(checkForMatch, 100);
-        }
+            //si es una demanda (pedido por el cliente) guardamos su nombre en el array productChosen
+            //y su id en productDemandaId
+            if (productType === 'demanda'){       
+                productChosen.push(productClienteArray[productId].name);
+                //guardamos sus id para poder trabajar con ella mas tarde
+                productDemandaId.push(productId);
+                //guardamos la clase del producto
+                productClass = '.' + this.getAttribute('class');
+            }
+
+            //si no es demanda es que es tipo producto y guardamos su nombre en el array productChosen
+            else{
+                productChosen.push(productArray[productId].name);       
+                productIdVenta.push(productId);
+            }
+
+            //cuando hay dos elementos los comprobamos
+            if(productChosen.length === 2){
+                setTimeout(checkForMatch, 100);
+            }
         }
 
         createBoardProductos();
-
     }  
-
     document.getElementById('BtnStart').addEventListener('click', startGame, true);
 })
