@@ -191,9 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
     var id_producto                 = 0;
     var productClass                = null;
 
-
     function startGame(){
-
+        
         //creamos la grid con los productos
         function createBoardProductos(){
             for(let i = 0; i < productArray.length; i++){
@@ -208,13 +207,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //CREATE CLIENTE
         function timerClientes(){
-
+            //si hay 5 elementos en la grid, esperamos otros 5 segundos para lanzar otro cliente
+            if (grid_clientes.childElementCount == 5) {
+                contador = 0;
+            }
             //añadimos un cliente cada X segundos
-            if (contador == 2) {
+            if (contador == 3) {
                 //si hay 5 clientes en la tabla paramos
                 if (id_cliente == 5) {
-                    //para que solo muestre 5 DE MOMENTO
-                    contador = 30;
+                    id_cliente = 0;
                 }
                 //si hemos llegado a 12 significa que ya hemos administrado todos los productos disponibles
                 if(id_producto == 12){
@@ -222,18 +223,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 //creamos nuestro cliente 
                 var cliente = document.createElement('img');
-                cliente.setAttribute('id', id_cliente);
-                cliente.setAttribute('class', 'cliente' + id_cliente);
+                cliente.setAttribute('id', id_producto);
+                cliente.setAttribute('class', 'cliente' + id_producto);
                 cliente.setAttribute('src', clienteArray[id_cliente].img);
                 grid_clientes.appendChild(cliente);
                 //creamos el producto cliente junto al cliente
                 var producto_cliente = document.createElement('img');
-                producto_cliente.setAttribute('id', id_cliente);
-                producto_cliente.setAttribute('class', 'producto-cliente' + id_cliente);
+                producto_cliente.setAttribute('id', id_producto);
+                producto_cliente.setAttribute('class', 'producto-cliente' + id_producto);
                 producto_cliente.setAttribute('src', productClienteArray[id_producto].img);
                 producto_cliente.setAttribute('tipo', 'demanda');
                 producto_cliente.addEventListener('click', clickProductos);
                 grid_productos.appendChild(producto_cliente);
+
+                console.log(producto_cliente.getAttribute('id') + ': id producto generado');
+                console.log(producto_cliente.getAttribute('class') + ': clase producto generado');
+                console.log(productClienteArray[id_producto].name + ': nombre producto generado');
 
                 //incrementamos el contador de cliente
                 id_cliente++;
@@ -247,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contador++;
             }
         }
-        setInterval(timerClientes, 1000);
+        let timerClient = setInterval(timerClientes, 1000);
 
         //Cronometro para anunciar el final del juego
         function cuentaAtras(){
@@ -255,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timeLeft.textContent = currentTime;
             if (currentTime === 0) {
                 clearInterval(timer);
+                clearInterval(timerClient);
                 alert('GAME OVER');
             };
         }
@@ -283,15 +289,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match ha sido correcto, cambiamos la imagen a img_success
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_s);
-                productoChosen.remove();
-                clientChosen.remove();
+
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
             } else{ 
                 //si no hace match no sumamos nada, mostramos que suma 0$
-                sumaDisplay.textContent = ' + 0';
+                sumaDisplay.textContent = ' + 0 $';
                 document.getElementById("suma").style.visibility="visible";
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match NO ha sido correcto, cambiamos la imagen a img_error
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_e);
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
+
             }      
             //vaciamos los array para el siguiente producto
             productChosen   = [];
@@ -305,7 +313,7 @@ document.addEventListener('DOMContentLoaded', () => {
             var productId   = this.getAttribute('id');
             //aqui guardamos su tipo
             var productType = this.getAttribute('tipo');
-
+           
             //si es una demanda (pedido por el cliente) guardamos su nombre en el array productChosen
             //y su id en productDemandaId
             if (productType === 'demanda'){       
@@ -314,16 +322,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 productDemandaId.push(productId);
                 //guardamos la clase del producto
                 productClass = '.' + this.getAttribute('class');
+                console.log('--------------');
+                console.log(productClienteArray[productId].name + ': nombre producto demanda');
+                console.log()
+                console.log('--------------');
             }
 
             //si no es demanda es que es tipo producto y guardamos su nombre en el array productChosen
             else{
                 productChosen.push(productArray[productId].name);       
                 productIdVenta.push(productId);
+                console.log('--------------');
+                console.log(productArray[productId].name + '; nombre producto vendedor');
+                console.log('--------------');
             }
 
             //cuando hay dos elementos los comprobamos
             if(productChosen.length === 2){
+                console.log(productDemandaId[0]);
+                console.log(productIdVenta[0]);
                 setTimeout(checkForMatch, 100);
             }
         }
