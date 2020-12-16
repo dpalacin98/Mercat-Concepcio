@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelector('footer').hidden = true;
+    document.getElementById('BtnStart').addEventListener('click', startGame, true);
 
     const productArray          = [
         {
@@ -197,22 +198,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('seconds').hidden   = true;
     document.getElementById('time-left').hidden = true;
     //ponemos el fondo de menu
-    background.style.backgroundImage="url(../media/archivos-usados/menu.jpg)";
-
-
-
+    background.style.backgroundImage="url(../media/menu.png)";
 
     function startGame(){
 
         //ocultamos boton para inicar el juego
         document.getElementById('BtnStart').hidden  = true;
         //cambiamos el fondo al fondo del juego 
-        background.style.backgroundImage=" url(../media/imagen-juego.png)";
+        background.style.backgroundImage=" url(../media/imagen-juego-final.png)";
         //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
         document.querySelector('h4').hidden         = false;
         document.getElementById('seconds').hidden   = false;
         document.getElementById('time-left').hidden = false;
-
 
         //creamos la grid con los productos
         function createBoardProductos(){
@@ -258,10 +255,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 producto_cliente.addEventListener('click', clickProductos);
                 grid_productos.appendChild(producto_cliente);
 
-                console.log(producto_cliente.getAttribute('id') + ': id producto generado');
-                console.log(producto_cliente.getAttribute('class') + ': clase producto generado');
-                console.log(productClienteArray[id_producto].name + ': nombre producto generado');
-
                 //incrementamos el contador de cliente
                 id_cliente++;
                 //incrementamos el contador de productoCliente
@@ -280,7 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
         function cuentaAtras(){
             currentTime--;
             timeLeft.textContent = currentTime;
-            console.log(currentTime);
             if (currentTime === 0) {
                 clearInterval(timer);
                 clearInterval(timerClient);
@@ -351,20 +343,14 @@ document.addEventListener('DOMContentLoaded', () => {
             else{
                 productChosen.push(productArray[productId].name);       
                 productIdVenta.push(productId);
-                console.log('--------------');
-                console.log(productArray[productId].name + '; nombre producto vendedor');
-                console.log('--------------');
             }
 
             //cuando hay dos elementos los comprobamos
             if(productChosen.length === 2){
-                console.log(productDemandaId[0]);
-                console.log(productIdVenta[0]);
                 setTimeout(checkForMatch, 100);
             }
         }
 
         createBoardProductos();
     }  
-    document.getElementById('BtnStart').addEventListener('click', startGame, true);
 })

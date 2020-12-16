@@ -42,7 +42,7 @@ Juegos
       <div class="row">
         <!-- row grid -->
         <div class="row row-productos">
-          <button id="BtnStart" onclick="startGame()">Start Game</button>
+          <button  id="BtnStart" class="btn btn-primary" onclick="startGame()">Start Game</button>
           <div class="grid"></div>
         </div>
         <!-- row productos -->
