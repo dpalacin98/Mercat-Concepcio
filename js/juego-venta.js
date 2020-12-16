@@ -180,8 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const timeLeft                  = document.querySelector('#time-left');
     const resultDisplay             = document.querySelector('#result');
     const sumaDisplay               = document.querySelector('#suma');
+    const background                = document.querySelector('.juego');
 
-    let currentTime                 = timeLeft.textContent;
+    let currentTime                 = 60//timeLeft.textContent;
     var productChosen               = [];
     var productDemandaId            = [];
     var productIdVenta              = [];
@@ -191,8 +192,28 @@ document.addEventListener('DOMContentLoaded', () => {
     var id_producto                 = 0;
     var productClass                = null;
 
+    //ponemos en hidden los marcadores mientras dure el menu
+    document.querySelector('h4').hidden         = true;
+    document.getElementById('seconds').hidden   = true;
+    document.getElementById('time-left').hidden = true;
+    //ponemos el fondo de menu
+    background.style.backgroundImage="url(../media/archivos-usados/menu.jpg)";
+
+
+
+
     function startGame(){
-        
+
+        //ocultamos boton para inicar el juego
+        document.getElementById('BtnStart').hidden  = true;
+        //cambiamos el fondo al fondo del juego 
+        background.style.backgroundImage=" url(../media/imagen-juego.png)";
+        //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
+        document.querySelector('h4').hidden         = false;
+        document.getElementById('seconds').hidden   = false;
+        document.getElementById('time-left').hidden = false;
+
+
         //creamos la grid con los productos
         function createBoardProductos(){
             for(let i = 0; i < productArray.length; i++){
@@ -212,27 +233,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 contador = 0;
             }
             //añadimos un cliente cada X segundos
-            if (contador == 3) {
+            if (contador == 2) {
                 //si hay 5 clientes en la tabla paramos
                 if (id_cliente == 5) {
                     id_cliente = 0;
                 }
                 //si hemos llegado a 12 significa que ya hemos administrado todos los productos disponibles
-                if(id_producto == 12){
+                if(id_producto  == 12){
                     id_producto = 0;
                 }
                 //creamos nuestro cliente 
-                var cliente = document.createElement('img');
+                var cliente         = document.createElement('img');
                 cliente.setAttribute('id', id_producto);
                 cliente.setAttribute('class', 'cliente' + id_producto);
                 cliente.setAttribute('src', clienteArray[id_cliente].img);
                 grid_clientes.appendChild(cliente);
+
                 //creamos el producto cliente junto al cliente
                 var producto_cliente = document.createElement('img');
-                producto_cliente.setAttribute('id', id_producto);
+                producto_cliente.setAttribute('id'   , id_producto);
                 producto_cliente.setAttribute('class', 'producto-cliente' + id_producto);
-                producto_cliente.setAttribute('src', productClienteArray[id_producto].img);
-                producto_cliente.setAttribute('tipo', 'demanda');
+                producto_cliente.setAttribute('src'  , productClienteArray[id_producto].img);
+                producto_cliente.setAttribute('tipo' , 'demanda');
                 producto_cliente.addEventListener('click', clickProductos);
                 grid_productos.appendChild(producto_cliente);
 
@@ -258,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function cuentaAtras(){
             currentTime--;
             timeLeft.textContent = currentTime;
+            console.log(currentTime);
             if (currentTime === 0) {
                 clearInterval(timer);
                 clearInterval(timerClient);
@@ -284,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ganancia    = ganancia + parseFloat(productArray[productIdVenta[0]].precio);
                 resultDisplay.textContent   = ganancia + ' $ ';
                 //mostramos el precio que ganamos con este match y luego lo ponemos en hidden hasta el siguiente
-                sumaDisplay.textContent     = ' +' + parseFloat(productArray[productIdVenta[0]].precio);
+                sumaDisplay.textContent     = ' +' + parseFloat(productArray[productIdVenta[0]].precio) + '$';
                 document.getElementById("suma").style.visibility="visible";
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match ha sido correcto, cambiamos la imagen a img_success
@@ -293,7 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
             } else{ 
                 //si no hace match no sumamos nada, mostramos que suma 0$
-                sumaDisplay.textContent = ' + 0 $';
+                sumaDisplay.textContent = ' + 0$';
                 document.getElementById("suma").style.visibility="visible";
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match NO ha sido correcto, cambiamos la imagen a img_error
@@ -309,7 +332,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //cuando hacemos click en un producto
         function clickProductos(){
-            //aqui guardamos el id del producto
+            //guardamos el id del producto
             var productId   = this.getAttribute('id');
             //aqui guardamos su tipo
             var productType = this.getAttribute('tipo');
@@ -322,10 +345,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 productDemandaId.push(productId);
                 //guardamos la clase del producto
                 productClass = '.' + this.getAttribute('class');
-                console.log('--------------');
-                console.log(productClienteArray[productId].name + ': nombre producto demanda');
-                console.log()
-                console.log('--------------');
             }
 
             //si no es demanda es que es tipo producto y guardamos su nombre en el array productChosen

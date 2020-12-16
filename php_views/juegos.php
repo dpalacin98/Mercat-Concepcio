@@ -18,10 +18,10 @@ Juegos
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
     <div class="col"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
-    <div class="col"><button id="BtnStart">Start Game</button></div>
+    <div class="col"><img src="../media/click-juego1.png" height="100%" width="80%" style="margin:auto; display: block;"></div>
   </div>
   <div class="container">
-      <!-- DIV JUEGO -->
+    <!-- DIV JUEGO -->
     <div class="juego">
       <!-- row puntos -->
       <div class="row row-puntos">
@@ -42,6 +42,7 @@ Juegos
       <div class="row">
         <!-- row grid -->
         <div class="row row-productos">
+          <button id="BtnStart" onclick="startGame()">Start Game</button>
           <div class="grid"></div>
         </div>
         <!-- row productos -->

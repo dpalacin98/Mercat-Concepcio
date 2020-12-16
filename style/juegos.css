@@ -3,11 +3,11 @@
 }
 .juego{
     margin-top: 3%;
-    background-image: url(../media/imagen-juego.png);
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
 }
+
 h4{
     margin-top: 16px;
     margin-left: 80px;
@@ -74,10 +74,9 @@ h5{
     height: 250px;
     margin-left: 25px;
 }
-#startBtn{
-    position: absolute;
-    margin-top: 275px;
-    margin-left: 455px;
-    width: 200px;
-    height: 50px;
+#BtnStart{
+    margin-top: 125px;
+    margin-left: 150px;
+    height: 100px;
+    width: 300px;
 }
