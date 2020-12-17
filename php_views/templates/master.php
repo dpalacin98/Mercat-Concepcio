@@ -14,6 +14,12 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
     unset($_SESSION['Error']);
   } 
   
+  if(isset($_SESSION['rol'] )){
+    $rol = $_SESSION['rol'];
+  }
+  else{
+    $rol = -1;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -58,10 +64,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-tag"></i>  Promociones</a>
         </li>
+        <?php if(isset($_SESSION['id'])){?>
+
         <!--Juegos-->
-        <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-gamepad"></i></i>  Juegos</a>
-        </li>
+          <li class="nav-item">
+            <a class="nav-link" href=<?php echo $ruta . "php_views/juegos.php"?>><i class="fas fa-gamepad"></i></i>  Juegos</a>
+          </li>
+        <?php }
+        ?>
         <!--Lista de deseos-->
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-heart"></i>  Lista de deseos</a>
@@ -72,9 +82,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <!--Inicio derecho-->
       <ul class="navbar-nav my-2 my-lg-0">
         <!--Admin-->
-        <li class="nav-item">
-        <a class="nav-link" href="#" ><i class="fas fa-cog"></i>  Admin</a>
-        </li>
+        <?php if($rol == 1){?>
+          <li class="nav-item">
+          <a class="nav-link" href=<?php echo $ruta . "php_views/administracion.php"?> ><i class="fas fa-cog"></i>  Admin</a>
+          </li>
+        <?php 
+        
+        }?>
+        
         <!--FAQ-->
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="far fa-question-circle"></i>  FAQ</a>
