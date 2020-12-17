@@ -1,0 +1,60 @@
+#box{
+    margin-top:200px;
+    height:125px;
+    width:125px; 
+    text-align: center;
+    
+}
+#food{
+    background-image: url("../media/juego3dialogo1.png");
+    background-size: cover;
+    background-color:#5DC7BD;
+    height:200px;
+
+}
+#divBox{
+    background-color:#5DC7BD;
+    top:0;
+}
+#openBox{
+    height:175px;
+    width:175px;
+}
+.products{
+    height:75px;
+    width: 75px;
+    margin:20px;
+}
+.show {
+    transition: opacity 400ms;
+}
+.hide {
+opacity: 0;
+}
+.juego{
+    margin-top: 3%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+.row-select{
+    margin-top: 2%;
+}
+.progress{
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+.modal-title{
+    margin-left: 170px;
+}
+#mensaje{
+    text-align: center;
+}
+.modal-dialog{
+    margin-top: 350px;
+}
+.modal-footer{
+    padding-right: 30px;
+}
