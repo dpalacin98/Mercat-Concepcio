@@ -2,6 +2,11 @@
     margin-top: 50px;
 }
 
+.tituloParadas {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .mapaMercado {
     margin-top: 50px;
 }
@@ -21,42 +26,4 @@
     width: 100%;
     height: 500px;
     object-fit: cover;
-}
-
-.glide__arrows {
-    position: absolute;
-    bottom: -30px;
-}
-
-.glide__arrows .glide__arrow {
-    background-color: #3f51b5;
-    border: none;
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 22px;
-    outline: none;
-    margin-right: 15px;
-}
-
-.glide__arrows .glide__arrow.glide__arrow--left {
-    left: 0;
-}
-
-.glide__arrows .glide__arrow.glide__arrow--right {
-    right: -90px;
-}
-
-.glide__slide {
-    transform: scale(.9);
-    filter: brightness(50%);
-    transition: all ease 0.5s;
-}
-
-.glide__slide.glide__slide--active {
-    transform: scale(1);
-    filter: brightness(100%);
 }

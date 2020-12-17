@@ -51,34 +51,35 @@ Landing
 				</div>
 			</div>
 		</div>
-		<div class="imagenPromocion" style="margin-bottom: 50px;">
+		<div class="imagenPromocion">
 			<img src="../media/fondo.jpg" alt="" width="100%" height="500px">
 		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm textoMercado">
-					<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<h4 class="tituloParadas">Paradas del Mercado</h4>
+					<div id="carouselExampleIndicatorsNew" class="carousel slide" data-ride="carousel">
 						<ol class="carousel-indicators">
-							<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-							<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+							<li data-target="#carouselExampleIndicatorsNew" data-slide-to="0" class="active"></li>
+							<li data-target="#carouselExampleIndicatorsNew" data-slide-to="1"></li>
+							<li data-target="#carouselExampleIndicatorsNew" data-slide-to="2"></li>
 						</ol>
 						<div class="carousel-inner">
 							<div class="carousel-item active">
-								<img src="../media/banner1.jpg" class="d-block w-100" alt="..." height="500">
+								<img src="../media/banner4.jpg" class="d-block w-100" alt="..." height="500">
 							</div>
 							<div class="carousel-item">
-								<img src="../media/banner2.jpg" class="d-block w-100" alt="..." height="500">
+								<img src="../media/banner5.jpg" class="d-block w-100" alt="..." height="500">
 							</div>
 							<div class="carousel-item">
-								<img src="../media/banner3.jpg" class="d-block w-100" alt="..." height="500">
+								<img src="../media/banner6.jpg" class="d-block w-100" alt="..." height="500">
 							</div>
 						</div>
-						<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<a class="carousel-control-prev" href="#carouselExampleIndicatorsNew" role="button" data-slide="prev">
 							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 							<span class="sr-only">Previous</span>
 						</a>
-						<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<a class="carousel-control-next" href="#carouselExampleIndicatorsNew" role="button" data-slide="next">
 							<span class="carousel-control-next-icon" aria-hidden="true"></span>
 							<span class="sr-only">Next</span>
 						</a>
