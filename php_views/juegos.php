@@ -40,7 +40,7 @@ Juegos
           <h4 id="seconds">Seconds left: </h4>
         </div>
         <div class="col">
-          <h4 id="time-left">10</h4>
+          <h4 id="time-left">5</h4>
         </div>
       </div>
       <!-- row elementos -->
@@ -48,6 +48,26 @@ Juegos
         <!-- row grid -->
         <div class="row row-productos">
           <div class="grid"></div>
+          <div id="myModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h6 class="modal-title">GAME OVER</h6>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="mensaje"></p>
+                </div>
+                <div class="modal-footer">
+                    <button  id="BtnKeep" class="btn btn-primary">Quedarse puntos</button>
+                    <button  id="BtnNext" class="btn btn-primary">Siguiente Juego</button>
+                    <button  id="BtnTryAgain" class="btn btn-primary">Volver a jugar</button>
+                </div>
+                </div>
+            </div>
+          </div>
         </div>
         <!-- row productos -->
         <div class="row row-productoClientes">
@@ -56,7 +76,7 @@ Juegos
         <!-- row clientes -->
         <div class="row row-clientes">
           <div class="grid-clientes">
-            <button  id="BtnStart" class="btn btn-primary">Start Game</button>
+            <button id="BtnStart" class="btn btn-primary">Start Game</button>
           </div>
         </div>
       </div>

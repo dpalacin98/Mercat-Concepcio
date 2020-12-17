@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //declaramos el boton start para iniciar el juego
     document.getElementById('BtnStart').addEventListener('click', startGame, true);
+    //document.getElementById('BtnTryAgain').addEventListener('click', startGame, true);
     //ocultamos el footer de momento
     document.querySelector('footer').hidden = true;
+
     //Declaramos nuestros arrays con los productos y clientes
     const productArray          = [
         {
@@ -187,17 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDisplay             = document.querySelector('#result');
     const sumaDisplay               = document.querySelector('#suma');
     const background                = document.querySelector('.juego');
-
-    //declaramos las variables con las que vamos a trabajar
-    let currentTime                 = timeLeft.textContent;
-    var productChosen               = [];
-    var productDemandaId            = [];
-    var productIdVenta              = [];
-    var ganancia                    = 0;
-    var contador                    = 1;
-    var id_cliente                  = 0;
-    var id_producto                 = 0;
-    var productClass                = null;
+    const puntosDisplay             = document.querySelector('#mensaje');
 
     //ponemos en hidden los marcadores mientras dure el menu
     document.querySelector('h4').hidden         = true;
@@ -205,16 +197,39 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('time-left').hidden = true;
     //ponemos el fondo de menu
     background.style.backgroundImage="url(../media/menu.png)";
-
+    
     function startGame(){
 
-        //borramos el boton al inicar el juego
-        document.getElementById('BtnStart').remove();
+        //declaramos las variables con las que vamos a trabajar
+        let currentTime                 = timeLeft.textContent;
+        var productChosen               = [];
+        var productDemandaId            = [];
+        var productIdVenta              = [];
+        var ganancia                    = 0;
+        var contador                    = 1;
+        var id_cliente                  = 0;
+        var id_producto                 = 0;
+        var productClass                = null;
+
+        //comprobamos que el boton esté para borrarlo o no borramos el boton al inicar el juego
+        if(document.getElementById('BtnStart') != null){
+            document.getElementById('BtnStart').remove();
+        }
+
         background.style.backgroundImage=" url(../media/imagen-juego-final.png)";
         //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
         document.querySelector('h4').hidden         = false;
         document.getElementById('seconds').hidden   = false;
         document.getElementById('time-left').hidden = false;
+
+        /// Get the modal
+        var modal = document.getElementById("myModal");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
         //creamos la grid con los productos
         function createBoardProductos(){
@@ -281,7 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentTime === 0) {
                 clearInterval(timer);
                 clearInterval(timerClient);
-                alert("GAME OVER");
+                //alert("GAME OVER");
+                puntosDisplay.textContent   = "HAS GANADO UN TOTAL DE " + ganancia + " PUNTOS";
+                modal.style.display         = "block";
             };
         }
         let timer = setInterval(cuentaAtras, 1000);

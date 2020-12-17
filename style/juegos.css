@@ -23,6 +23,18 @@ h5{
     margin-top: 18px;
     margin-left: -65px;
 }
+.modal-title{
+    margin-left: 170px;
+}
+#mensaje{
+    text-align: center;
+}
+.modal-dialog{
+    margin-top: 350px;
+}
+.modal-footer{
+    padding-right: 30px;
+}
 .progress{
     margin-top: 2%;
     margin-left: 4%;
