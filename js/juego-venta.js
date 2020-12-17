@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    document.querySelector('footer').hidden = true;
+    //declaramos el boton start para iniciar el juego
     document.getElementById('BtnStart').addEventListener('click', startGame, true);
-
+    //ocultamos el footer de momento
+    document.querySelector('footer').hidden = true;
+    //Declaramos nuestros arrays con los productos y clientes
     const productArray          = [
         {
             name: 'arandano',
@@ -174,7 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     ];
 
+    //hacemos un random del array de clientes para que no salgan en el mismo orden
     productClienteArray.sort(()     => 0.5 - Math.random());
+
+    //seleccionamos nuestros elementos del html para trabajar con ellos
     const grid                      = document.querySelector('.grid');
     const grid_productos            = document.querySelector('.grid-productos');
     const grid_clientes             = document.querySelector('.grid-clientes');
@@ -183,7 +188,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const sumaDisplay               = document.querySelector('#suma');
     const background                = document.querySelector('.juego');
 
-    let currentTime                 = 60//timeLeft.textContent;
+    //declaramos las variables con las que vamos a trabajar
+    let currentTime                 = timeLeft.textContent;
     var productChosen               = [];
     var productDemandaId            = [];
     var productIdVenta              = [];
@@ -200,10 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     //ponemos el fondo de menu
     background.style.backgroundImage="url(../media/menu.png)";
 
+
     function startGame(){
 
         //ocultamos boton para inicar el juego
-        document.getElementById('BtnStart').hidden  = true;
+        document.getElementById('BtnStart').remove();
         //cambiamos el fondo al fondo del juego 
         background.style.backgroundImage=" url(../media/imagen-juego-final.png)";
         //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
@@ -276,7 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentTime === 0) {
                 clearInterval(timer);
                 clearInterval(timerClient);
-                alert('GAME OVER');
+                alert("GAME OVER");
             };
         }
         let timer = setInterval(cuentaAtras, 1000);
@@ -350,6 +357,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(checkForMatch, 100);
             }
         }
+
 
         createBoardProductos();
     }  

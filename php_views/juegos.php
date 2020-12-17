@@ -1,4 +1,10 @@
-<?php include "templates/master.php";?>
+<?php include "templates/master.php";
+
+/*if(!$_SESSION['id'])
+{
+  header('Location:../index.php');
+}*/
+?>
 
 <!--Colocamos el titulo-->
 <?php startblock('titulo'); ?>
@@ -35,7 +41,7 @@ Juegos
           <h4 id="seconds">Seconds left: </h4>
         </div>
         <div class="col">
-          <h4 id="time-left">60</h4>
+          <h4 id="time-left">10</h4>
         </div>
       </div>
       <!-- row elementos -->
