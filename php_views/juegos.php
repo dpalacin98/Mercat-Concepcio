@@ -1,5 +1,4 @@
 <?php include "templates/master.php";
-
 /*if(!$_SESSION['id'])
 {
   header('Location:../index.php');
@@ -48,7 +47,6 @@ Juegos
       <div class="row">
         <!-- row grid -->
         <div class="row row-productos">
-          <button  id="BtnStart" class="btn btn-primary" onclick="startGame()">Start Game</button>
           <div class="grid"></div>
         </div>
         <!-- row productos -->
@@ -58,6 +56,7 @@ Juegos
         <!-- row clientes -->
         <div class="row row-clientes">
           <div class="grid-clientes">
+            <button  id="BtnStart" class="btn btn-primary">Start Game</button>
           </div>
         </div>
       </div>

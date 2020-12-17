@@ -206,12 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
     //ponemos el fondo de menu
     background.style.backgroundImage="url(../media/menu.png)";
 
-
     function startGame(){
 
-        //ocultamos boton para inicar el juego
+        //borramos el boton al inicar el juego
         document.getElementById('BtnStart').remove();
-        //cambiamos el fondo al fondo del juego 
         background.style.backgroundImage=" url(../media/imagen-juego-final.png)";
         //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
         document.querySelector('h4').hidden         = false;
@@ -357,7 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(checkForMatch, 100);
             }
         }
-
 
         createBoardProductos();
     }  

@@ -7,7 +7,6 @@
     background-size: cover;
     height: 600px;
 }
-
 h4{
     margin-top: 16px;
     margin-left: 80px;
@@ -75,8 +74,8 @@ h5{
     margin-left: 35px;
 }
 #BtnStart{
-    margin-top: 75px;
-    margin-left: 150px;
-    height: 100px;
-    width: 300px;
+    height: 60px;
+    width: 200px;
+    margin-top: 130px;
+    margin-left: 580px;
 }
