@@ -3,9 +3,18 @@
     height:125px;
     width:125px; 
     text-align: center;
+    
 }
 #food{
+    background-image: url("../media/juego3dialogo1.png");
+    background-size: cover;
+    background-color:#5DC7BD;
     height:200px;
+
+}
+#divBox{
+    background-color:#5DC7BD;
+    top:0;
 }
 #openBox{
     height:175px;

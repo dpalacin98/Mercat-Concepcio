@@ -9,7 +9,7 @@
 
     <? startblock("principal") ?>
 <div class="container border border-dark mt-3">
-    <div style="height:600px">
+    <div>
         <div class="row w-auto bg-primary border-bottom border-dark" style="height: 40px; ">
             <div class="col-1">
                 <h5 id="test"></h5>
@@ -47,15 +47,14 @@
                 <img id="vegetable" class="img-fluid" src="../media/market_stop/009-spice.png" alt="Kiwi standing on oval">
             </div>
         </div>
-            <div style="background-color:#5DC7BD" class="row" id="food">
-                
+        
+            <div style="" class="row" id="food">
             </div>
-            <div style="background-color:#5DC7BD"class="row" >
-                <img class="img-responsive m-4 mx-auto d-block" id="box"  src="../media/food/box.svg" onclick="openBox()">
+            <div class="row" id="divBox" >
+                <img class="img-responsive m-auto mx-auto d-block" id="box"  src="../media/food/box.svg" onclick="openBox()">
             </div>
         
     </div>
 </div>
 <?php endblock() ?>
 <script type="text/javascript" src="../js/juego3.js"></script>
-<!-- <script>pepe()</script> -->

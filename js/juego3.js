@@ -2,7 +2,21 @@ products = ["carne","gamba","cangrejo","pez","pez2","girasol","queso","queso2","
 aux = 0;
 time = -1;
 points = 0;
+vdialogo = 0;
 var drag;
+// document.getElementById("divBox").hidden = "true";
+document.getElementById("divBox").style.display = "none"
+document.getElementById("food").style.height = "370px"
+var button = document.createElement("button")
+var div = document.createElement("div")
+div.classList.add("ml-auto")
+button.classList.add("btn")
+button.classList.add("btn-primary")
+button.classList.add("m-4")
+button.innerHTML = "Siguiente"
+button.addEventListener("click",dialogo)
+document.getElementById('food').appendChild(div);
+div.appendChild(button)
 
 function openBox(){
     aux = 0;
@@ -114,5 +128,20 @@ function checkDivFood(){
     if(products.length == 0){
         textPoints.innerHTML = points
         openBox()
+    }
+}
+function dialogo(){
+    if(vdialogo !=1){
+        document.getElementById("food").style.backgroundImage = "url('../media/juego3dialogo2.png')";
+        button.innerHTML = "Iniciar juego"
+        vdialogo = 1
+    }
+    else{
+        button.hidden = "true"
+        document.getElementById("food").style.backgroundImage = "none"
+        document.getElementById("food").style.height = null
+        document.getElementById("divBox").style.display = "block"
+        document.getElementById("divBox").style.backgroundColor ="#5DC7BD";
+        div.classList.remove("ml-auto")
     }
 }
