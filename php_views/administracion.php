@@ -14,7 +14,7 @@ startblock('principal')?>
     <div class="col-2 position-absolute" style="top:0;height: 100vh;">
       <ul class="nav flex-column nav-pills"id="menu">
         <li class="nav-item">
-          <a class="nav-link menul" style="color:white;"id="navusers"onclick="toggle('users');" href="#users">Usuarios</a>
+          <a class="nav-link menul" id="navusers"onclick="toggle('users');" href="#users">Usuarios</a>
         </li>
         <li class="nav-item"> 
           <a class="nav-link menul" id="navpromociones" onclick="toggle('promociones');" href="#promociones">Promociones</a>
@@ -68,7 +68,7 @@ startblock('principal')?>
         <div class="col-8">
           <h3 class="display-4 m-3">Puntos Juego</h3>
         </div>
-        <div class="col-4">
+        <div class="col-4 my-2">
           <button type="button" onclick="addPromo()" class="btn btn-primary mt-4"> Historial partidas </button>
         </div>
       </div>
