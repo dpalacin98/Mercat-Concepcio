@@ -6,6 +6,7 @@ function checkURL(){
     else{
         toggle('');
     }
+    document.querySelector('footer').hidden = true;
 }
 
 function toggle(tab){
@@ -14,11 +15,13 @@ function toggle(tab){
     for(var i = 0;i < divs.length;i++){
         divs[i].hidden = true;
         navLink[i].classList.remove('active');
+        navLink[i].style.color = "#636363";
     }
     if(tab != ''){
         var texto ='nav'+tab;
         document.getElementById(tab).hidden = false;
         document.getElementById('nav'+tab).classList.add('active');
+        document.getElementById('nav'+tab).style.color = "#FFFFFF";   
     }
 }
 if(location.hash){
