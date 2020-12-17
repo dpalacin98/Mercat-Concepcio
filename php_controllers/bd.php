@@ -1,5 +1,4 @@
 <?php
-
 function connect(){
     include 'config.php';
 
@@ -40,6 +39,26 @@ function insertAUser($email,$rol,$nombre,$apellido,$password,$nivel,$puntos){
     $stmt->bindParam(':puntos',$puntos);
     $stmt -> execute();
     $conn = disconnect();
+}
+//LOGIN
+function login ($email,$password){ //$user y $pass variables que introduce el usuario en el login
+    $res = false;
+    $conn = connect();
+    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email =:email");
+    $stmt -> bindParam(':email',$email);
+    $stmt -> execute();
+    $result = $stmt->fetchAll();
+    $conn = disconnect();
+    
+    if(isset($result[0])){
+        $hashpasswd = $result[0]['passwd'];
+        if(password_verify($password,$hashpasswd)){
+            $_SESSION["id"] = $result[0]["id"];
+            $_SESSION["rol"] = $result[0]["rol"];
+            $res = true;
+        }
+    } 
+    return $res;
 }
 function editAUser($id, $email, $rol, $nombre, $apellido, $password, $nivel, $puntos){ 
     //REVISAR ENCRIPTACIÓN CONTRASEÑA

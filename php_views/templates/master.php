@@ -1,7 +1,25 @@
 <?php
 session_start();
+
+// session_destroy();
 $ruta ="/Mercat-Concepcio/";
 require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
+
+//$_SESSION['id']=1;
+// $_SESSION.session_destroy();
+//error
+  if(isset($_SESSION['Error'])){
+      
+    $err =  $_SESSION['Error'];
+    unset($_SESSION['Error']);
+  } 
+  
+  if(isset($_SESSION['rol'] )){
+    $rol = $_SESSION['rol'];
+  }
+  else{
+    $rol = -1;
+  }
 ?>
 
 <!DOCTYPE html>
@@ -12,17 +30,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
     <title><?php startblock('titulo') ?><?php endblock() ?></title>
     
     <!-- Librerías bootstrap -->
-    <link rel="stylesheet" href=<?php echo $ruta . "php_libraries/bootstrap/css/bootstrap.css"?>
-    >
+    <link rel="stylesheet" href=<?php echo $ruta . "php_libraries/bootstrap/css/bootstrap.css"?>>
+  
     <!-- CSS -->
+    
     <?php startblock('css'); endblock()?>
 </head>
 <body>
 
-  <!-- NAV -->
-
+    <!-- NAV -->
+   
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">MERCAT DE LA CONCEPCIÓ</a>
+    <a class="navbar-brand" href="#">LA CONCEPCIÓ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -45,6 +64,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-tag"></i>  Promociones</a>
         </li>
+        <?php if(isset($_SESSION['id'])){?>
+
+        <!--Juegos-->
+          <li class="nav-item">
+            <a class="nav-link" href=<?php echo $ruta . "php_views/juegos.php"?>><i class="fas fa-gamepad"></i></i>  Juegos</a>
+          </li>
+        <?php }
+        ?>
         <!--Lista de deseos-->
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-heart"></i>  Lista de deseos</a>
@@ -54,9 +81,14 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <!--Inicio derecho-->
       <ul class="navbar-nav my-2 my-lg-0">
         <!--Admin-->
-        <li class="nav-item">
-        <a class="nav-link" href="#" ><i class="fas fa-cog"></i>  Admin</a>
-        </li>
+        <?php if($rol == 1){?>
+          <li class="nav-item">
+          <a class="nav-link" href=<?php echo $ruta . "php_views/administracion.php"?> ><i class="fas fa-cog"></i>  Admin</a>
+          </li>
+        <?php 
+        
+        }?>
+        
         <!--FAQ-->
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="far fa-question-circle"></i>  FAQ</a>
@@ -72,21 +104,189 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         </li>
       
         <!--cuentas-->
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a>
-          <div class="dropdown-menu" style="background-color: #F49600;">
-            <a class="dropdown-item" href="#" style="color: white;">  Usuarix</a>
-            <a class="dropdown-item" href="#" style="color: white;">  Admin</a>
-          </div>
-        </li>
+        <!-- <button class="btn btn-primary" type="button" data-toggle="modal" data-target='#modal' >MOSTRAR MODAL</button> -->
+        <?php if(isset($_SESSION['id'])){?>
+          
+          <li class="nav-item dropdown">
+
+            <a id="id-cuenta" class="nav-link dropdown-toggle"  data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a>
+            <div class="dropdown-menu" style="background-color: #F49600;">
+            <!--Comprobar si está registrado/iniciado sesión-->
+              <a class="dropdown-item" href="#" style="color: white;">  Editar perfil</a>
+              <a class="dropdown-item" href="logout.php" style="color: white;">  Cerrar sesión</a>
+            </div>
+          </li>
+        <?php }
+
+        else{ ?>
+          <li>
+            <!-- <a id="id-cuenta" class="nav-link"  data-toggle="modalInicio" data-target='#modalInicio'  href="#" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a> -->
+            <a id="id-cuenta" class="nav-link" data-toggle="modal" data-target="#modalInicio" href="#"><i class="fas fa-user-alt"></i> Cuenta</a>
+            <!-- <a id="id-cuenta" class="nav-link"  data-toggle="modalInicio" data-target='#modalInicio' href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a> -->
+          
+          </li>
+
+      <?php
+      } ?>
+
       </ul>
       <!--fin derecho-->
     </div>
   </nav>
- 
-  <!--FIN NAV-->
-  <?php startblock('principal') ?><?php endblock()?>
-</body>
+  
+    <!--FIN NAV-->
+    <?php startblock('principal') ?><?php endblock() ?>
+
+    <!-- MODAL INICIO -->
+    <div class="container">
+        <!--modal-->
+        <div class="modal fade" tabindex="-1" id="modalInicio">
+            <div class="modal-dialog modal modal-dialog-centered">
+                <div class="modal-content">
+                    
+                    <!-- modal header -->
+                    <!-- <div class="modal-header">
+                        <button class="close" data-dismiss="modal">&times;</button>
+                    </div> -->
+                    <!-- modal body -->
+                    
+                    <div class="modal-body">
+                        <!-- cuerpo -->
+                        <div class="row">
+                            <div class="col-xl">
+                                <div class="panel panel-login">
+                                    <!-- panel encabezado -->
+                                    <div class="panel-heading">
+                                        <div class="row">
+                                            <!-- Iniciar sesión -->
+                                            <div class="col-xl">
+                                                <a href="#" id="login-form-link" onclick="funcionRegistro()">Iniciar sesión</a>
+                                            </div>
+                                            <!-- Registrarme -->
+                                            <div class="col-xl">
+                                                <a href="#"  id="register-form-link"  onclick="funcionInicarSesion()">Registrarse</a>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                    </div>
+                                    <!--Panel body-->
+                                    <div class="panel-body">
+                                        <div class="row">
+                                           
+                                            <div class="col-lg-12">
+                                               <!-- DIV FORM LOGIN -->
+                                                <div id="divLogin">
+                                                    <form id="login-form"  action="<?php echo $ruta . "php_controllers/login.php"?>"  method="post" role="form" style="display: block;">
+                                                        <!-- Usuarix -->
+                                                        <div class="form-group">
+                                                            <input type="email" name="email" id="emaillogin" tabindex="1" class="form-control" placeholder="E-mail" >
+                                                        </div>
+                                                        <!-- Contraseña -->
+                                                        <div class="form-group">
+                                                            <input type="password" name="password" id="passwordlogin" tabindex="2" class="form-control" placeholder="Contraseña">
+                                                        </div>
+                                                        <!-- Recordarme
+                                                        <div class="form-group text-center">
+                                                            <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                                            <label for="remember"> Recordarme</label>
+                                                        </div> -->
+                                                        <!-- Botón iniciar sesión -->
+                                                        <div class="btn-form-group">
+                                                            <div class="row">
+                                                                <div class="col-xl">
+                                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login btn-primary " value="Iniciar sesión">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
+                                                    </form>
+                                                <!-- FIN FORM INICIAR SESIÓN -->
+                                                
+                    
+
+                                                </div>
+                                                <!-- Mensaje de alerta -->
+                                                <?php if(isset($err)){
+                                                  ?>
+                                                  
+                                                  
+                                                  <div class="alert alert-dismissible alert-warning mt-3">
+                                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                                    <h4 class="alert-heading">ERROR!</h4>
+                                                    <p class="mb-0"><?php echo $err ?>.</p>
+                                                  </div>
+                                                <?php 
+                                                
+                                                }?>
+
+                                                <!-- FIN DIV LOGIN -->
+                                                <!--  INCIO DIV REGISTRO-->
+                                                <div id="divRegistro">
+                                                    <!-- INICIO FORM REGISTRO -->
+                                                    <form id="register-form" action="<?php echo $ruta . "php_controllers/login.php"?>" method="post" role="form">
+                                                        <div class="form-group">
+                                                            <input type="text" name="name" id="usernameregistro" tabindex="1" class="form-control" placeholder="Usuario" value="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" name="password" id="passwordresgistro" tabindex="2" class="form-control" placeholder="Contraseña">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                                        </div>
+
+                                                        <div class="btn-form-group">
+                                                            <div class="row">
+                                                                <div class="col-xl">
+                                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register btn-primary" value="Crear cuenta">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <!-- FIN FORM REGISTRO -->
+                                             
+
+                                                </div>
+                                                <!-- FIN DIV REGISTRO -->
+                                                
+                                                        
+                                                
+                                            </div>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <!-- MODAL FIN -->
+    <script src=<?php echo $ruta ."php_libraries/bootstrap/js/jquery-3.5.1.min.js"?>></script>
+    <script src=<?php echo $ruta ."php_libraries/bootstrap/js/popper.min.js"?>></script>
+    <script src=<?php echo $ruta ."php_libraries/bootstrap/js/bootstrap.min.js"?>></script>
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/b87b71c2a9.js" crossorigin="anonymous"></script>
+    <!-- SCRIPT INICAR SESION/REGISTRO -->
+
+    <script src=<?php echo $ruta ."js/master.js"?>></script>
+    <?php startblock('js') ?><?php endblock() ?>
+
+
+
+<?php if(isset($err)){?>
+  <script> showmodal()</script>
+<?php
+}?>
+
+
+  </body>
 
 <!-- Footer -->
 <footer class="page-footer font-small indigo">

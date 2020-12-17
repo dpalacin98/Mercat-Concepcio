@@ -1,0 +1,24 @@
+#box{
+    margin-top:200px;
+    height:125px;
+    width:125px; 
+    text-align: center;
+}
+#food{
+    height:200px;
+}
+#openBox{
+    height:175px;
+    width:175px;
+}
+.products{
+    height:75px;
+    width: 75px;
+    margin:20px;
+}
+.show {
+    transition: opacity 400ms;
+  }
+  .hide {
+    opacity: 0;
+  }
