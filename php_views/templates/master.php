@@ -211,7 +211,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
                                                   ?>
                                                   
                                                   
-                                                  <div class="alert alert-dismissible alert-warning">
+                                                  <div class="alert alert-dismissible alert-warning mt-3">
                                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                                                     <h4 class="alert-heading">ERROR!</h4>
                                                     <p class="mb-0"><?php echo $err ?>.</p>
