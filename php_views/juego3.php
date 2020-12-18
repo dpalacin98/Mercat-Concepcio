@@ -1,8 +1,8 @@
 <?php include "templates/master.php";
-/*if(!$_SESSION['id'])
+if(!$_SESSION['id'])
 {
   header('Location:../index.php');
-}*/
+}
 ?>
 
 <!--Colocamos el titulo-->
