@@ -119,7 +119,7 @@ for(var i = 0; i < market_stop.length;i++){
         })
 }
 function timer(){
-    time = 50;
+    time = 90;
     var timer = document.getElementById("timer")
     var intervalTime = setInterval(function(){
         if(time>=0){
