@@ -21,10 +21,10 @@ Juegos
   <!-- SELECT JUEGOS -->
   <div class="row row-select">  
     <div class="col">
-      <a href="juego1.php"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
+      <a href="juegos.php"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
     </div>
     <div class="col">
-      <a href="juego2.php"><img src="../media/imagen.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
+      <a href="juego2.php"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
     </div>
     <div class="col">
       <a href="juego3.php"><img src="../media/background-juego4/click-juego3.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
