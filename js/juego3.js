@@ -1,4 +1,4 @@
-products = ["carne","gamba","cangrejo","pez","pez2","girasol","queso","queso2","queso3"];
+products = ["carne","alitas","salchicha","bacon","gamba","cangrejo","pez","pez2","girasol","planta","cactus","queso","queso2","queso3","sandia","platanos","fresa","cereza","tomate","brocoli","eggplant","zanahoria","carnivora"];
 aux = 0;
 time = -1;
 points = 0;
@@ -67,12 +67,12 @@ function random(min, max) {
 }
 
 function checkProduct(product,shop){
-    var meat = ["carne"];
+    var meat = ["carne","alitas","salchicha","bacon"];
     var fish = ["gamba","cangrejo","pez","pez2"];
-    var plants = ["girasol"];
+    var plants = ["girasol","planta","cactus","carnivora"];
     var cheese = ["queso","queso2","queso3"];
-    var fruit = ["pepe"];
-    var vegetable = ["pepe2"];
+    var fruit = ["sandia","platanos","fresa","cereza"];
+    var vegetable = ["tomate","brocoli","eggplant","zanahoria"];
     var products;
     var result = true;
     switch(shop){
