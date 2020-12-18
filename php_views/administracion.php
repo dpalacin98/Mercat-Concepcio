@@ -1,5 +1,6 @@
-<?php include '../php_controllers/admin.php';
-include 'templates/master.php';
+<?php include 'templates/master.php';
+include '../php_controllers/admin.php';
+
 $niveles = 4;
 startblock('css');?>
 <link rel="stylesheet" href="../style/admin.css">
@@ -23,10 +24,10 @@ startblock('principal')?>
           <a class="nav-link menul" id="navhistorial"onclick="toggle('historial');" href="#historial">Puntos de Juego</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link menul" id="navparadas"onclick="toggle('paradas');" href="#paradas">Paradas</a>
+          <a class="nav-link menul" id="navparadas"onclick="toggle('paradas');" href="#paradas" hidden>Paradas</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link menul" id="navcontacto"onclick="toggle('contacto');" href="#contacto">Contacto</a>
+          <a class="nav-link menul" id="navcontacto"onclick="toggle('contacto');" href="#contacto" hidden>Contacto</a>
         </li>
       </ul>
     </div>

@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // session_destroy();
 $ruta ="/Mercat-Concepcio/";
 require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
@@ -41,7 +40,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
     <!-- NAV -->
    
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">LA CONCEPCIÓ</a>
+    <a class="navbar-brand" href="<?php echo $ruta . "index.php"?>">LA CONCEPCIÓ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,18 +51,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
       <!--inicio izquierdo-->
       <!--Inicio-->
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-home"></i>  Inicio
+          <a class="nav-link" href=<?php echo $ruta . "index.php"?>><i class="fas fa-home"></i>  Inicio
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <!--Paradas-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-search-location"></i>  Paradas</a>
-        </li>
+        </li> -->
         <!--Promociones-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-tag"></i>  Promociones</a>
-        </li>
+        </li> -->
         <?php if(isset($_SESSION['id'])){?>
 
         <!--Juegos-->
@@ -73,9 +72,9 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <?php }
         ?>
         <!--Lista de deseos-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-heart"></i>  Lista de deseos</a>
-        </li>
+        </li> -->
       </ul>
         <!-- fin izquierdo-->
         <!--Inicio derecho-->
@@ -90,18 +89,18 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         }?>
         
         <!--FAQ-->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="#"><i class="far fa-question-circle"></i>  FAQ</a>
-        </li>
+        </li> -->
         <!--Idiomas-->
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i> Idioma</a>
           <div class="dropdown-menu" style="background-color: #F49600;">
             <a class="dropdown-item" href="#" style="color: white;">  Español</a>
             <a class="dropdown-item" href="#" style="color: white;">  Catalán</a>
             <a class="dropdown-item" href="#" style="color: white;">  Inglés</a>
           </div>
-        </li>
+        </li> -->
       
         <!--cuentas-->
         <!-- <button class="btn btn-primary" type="button" data-toggle="modal" data-target='#modal' >MOSTRAR MODAL</button> -->
@@ -113,7 +112,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
             <div class="dropdown-menu" style="background-color: #F49600;">
             <!--Comprobar si está registrado/iniciado sesión-->
               <a class="dropdown-item" href="#" style="color: white;">  Editar perfil</a>
-              <a class="dropdown-item" href="logout.php" style="color: white;">  Cerrar sesión</a>
+              <a class="dropdown-item" href=<?php echo $ruta . "logout.php"?> style="color: white;">  Cerrar sesión</a>
             </div>
           </li>
         <?php }
