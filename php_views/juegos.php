@@ -12,7 +12,7 @@ Juegos
 
 <!--Insertamos la css-->
 <?php startblock('css');?>
-<link rel="stylesheet" href="../style/juego3.css">
+<link rel="stylesheet" href="../style/juegos.css">
 <?php endblock() ?>
 
 <!--Main-->
@@ -57,48 +57,7 @@ Juegos
     </div>
     <!-- DIV JUEGO -->
     <div class="juego">
-      <div class="row w-auto bg-primary border-bottom border-dark" style="height: 40px; ">
-            <div class="col-1">
-                <h5 id="test"></h5>
-            </div>
-            
-            <div class="col-1 offset-6 border-dark">
-                <h5>TIME:</h5>
-            </div>
-            <div class="col-1">
-                <h5 id="timer">00</h5>
-            </div>
-            <div class="col-1"><h5 >POINTS:</h5></div>
-            
-            <div class="col-1">
-                <h5 style="color:green"id="points">0</h5>
-            </div>
-      </div>
-      <div class="row p-3" style="background-color:grey;">
-            <div class="col-2 market_stop">
-                <img id="meat"class="img-fluid" src="../media/market_stop/001-butcher shop.svg" alt="Kiwi standing on oval" >
-            </div>
-            <div class="col-2 market_stop">
-                <img id="fish"class="img-fluid" src="../media/market_stop/002-fish market.svg" alt="Kiwi standing on oval">
-            </div>
-            <div class="col-2 market_stop">
-                <img id="plants" class="img-fluid" src="../media/market_stop/039-garden centre.svg" alt="Kiwi standing on oval">
-            </div>
-            <div class="col-2 market_stop">
-                <img id="cheese" class="img-fluid" src="../media/market_stop/016-cheese.svg" alt="Kiwi standing on oval">
-            </div>
-            <div class="col-2 market_stop">
-                <img id="fruit" class="img-fluid" src="../media/market_stop/014-fruit stand.svg" alt="Kiwi standing on oval">
-            </div>
-            <div class="col-2 market_stop">
-                <img id="vegetable" class="img-fluid" src="../media/market_stop/009-spice.png" alt="Kiwi standing on oval">
-            </div>
-      </div>    
-      <div class="row" id="food">
-      </div>
-      <div class="row" id="divBox" >
-          <img class="img-responsive m-auto mx-auto d-block" id="box"  src="../media/food/box.svg" onclick="openBox()">
-      </div>
+      <img src="../media/outofservice.png">
     </div>
     <!-- BARRA PUNTOS USUARIO -->
     <div class="progress">
