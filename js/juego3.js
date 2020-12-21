@@ -71,8 +71,8 @@ function checkProduct(product,shop){
     var fish = ["gamba","cangrejo","pez","pez2"];
     var plants = ["girasol","planta","cactus","carnivora"];
     var cheese = ["queso","queso2","queso3"];
-    var fruit = ["sandia","platanos","fresa","cereza"];
-    var vegetable = ["tomate","brocoli","eggplant","zanahoria"];
+    var fruit = ["sandia","platanos","fresa","cereza","tomate"];
+    var vegetable = ["brocoli","eggplant","zanahoria"];
     var products;
     var result = true;
     switch(shop){
@@ -119,7 +119,7 @@ for(var i = 0; i < market_stop.length;i++){
         })
 }
 function timer(){
-    time = 90;
+    time = 5;
     var timer = document.getElementById("timer")
     var intervalTime = setInterval(function(){
         if(time>=0){

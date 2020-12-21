@@ -67,7 +67,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
 
         <!--Juegos-->
           <li class="nav-item">
-            <a class="nav-link" href=<?php echo $ruta . "php_views/juegos.php"?>><i class="fas fa-gamepad"></i></i>  Juegos</a>
+            <a class="nav-link" href=<?php echo $ruta . "php_views/juego3.php"?>><i class="fas fa-gamepad"></i></i>  Juegos</a>
           </li>
         <?php }
         ?>

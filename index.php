@@ -52,7 +52,7 @@ Mercat de la Concepció
 			</div>
 		</div>
 		<div class="imagenPromocion">
-			<img src="media/fondo.jpg" alt="" width="100%" height="500px">
+			<img src="media/banner.png" alt="" width="100%" height="500px">
 		</div>
 		<div class="container">
 			<div class="row">

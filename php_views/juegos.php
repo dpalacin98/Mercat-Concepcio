@@ -21,10 +21,10 @@ Juegos
   <!-- SELECT JUEGOS -->
   <div class="row row-select">  
     <div class="col">
-      <a href="juegos.php"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
+      <a href="#"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
     </div>
     <div class="col">
-      <a href="juego2.php"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
+      <a href="#"><img src="../media/outofservice.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
     </div>
     <div class="col">
       <a href="juego3.php"><img src="../media/background-juego4/click-juego3.png" height="100%" width="80%" style="margin:auto; display: block;"></a>
@@ -60,9 +60,9 @@ Juegos
       <img src="../media/outofservice.png">
     </div>
     <!-- BARRA PUNTOS USUARIO -->
-    <div class="progress">
+    <!-- <div class="progress">
       <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; color:black;">100%</div>
-    </div>
+    </div> -->
   </div>
  <?php endblock()?>
 

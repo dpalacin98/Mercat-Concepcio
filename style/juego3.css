@@ -36,6 +36,7 @@ opacity: 0;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
+    margin-bottom: 60px;
 }
 .row-select{
     margin-top: 2%;

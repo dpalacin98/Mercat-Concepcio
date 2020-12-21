@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contador = 0;
             }
             //añadimos un cliente cada X segundos
-            if (contador == 2) {
+            if (contador == 1) {
                 //si hay 5 clientes en la tabla paramos
                 if (id_cliente == 5) {
                     id_cliente = 0;
@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 //como el match ha sido correcto, cambiamos la imagen a img_success
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_s);
 
-                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 4000);
             } else{ 
                 //si no hace match no sumamos nada, mostramos que suma 0$
                 sumaDisplay.textContent = ' + 0$';
@@ -335,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match NO ha sido correcto, cambiamos la imagen a img_error
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_e);
-                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 4000);
 
             }      
             //vaciamos los array para el siguiente producto
