@@ -40,7 +40,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
 
     <!-- NAV -->
    
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-primary">
     <a class="navbar-brand" href="#">LA CONCEPCIÓ</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,17 +52,17 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
       <!--inicio izquierdo-->
       <!--Inicio-->
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-home"></i>  Inicio
+          <a class="nav-link" href="<?php echo $ruta . "index.php"?>"><i class="fas fa-home"></i>  Inicio
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <!--Paradas-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-search-location"></i>  Paradas</a>
+          <a class="nav-link" href="<?php echo $ruta . "index.php"?>"><i class="fas fa-search-location"></i>  Paradas</a>
         </li>
         <!--Promociones-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-tag"></i>  Promociones</a>
+          <a class="nav-link" href="<?php echo $ruta . "php_views/promociones.php"?>"><i class="fas fa-tag"></i>  Promociones</a>
         </li>
         <?php if(isset($_SESSION['id'])){?>
 
