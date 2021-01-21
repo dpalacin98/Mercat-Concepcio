@@ -68,7 +68,7 @@ function deleteAUser($id){
 
 function selectAllPromociones(){
     $conn = connect();
-    $stmt = $conn-> prepare("SELECT promociones.id, promociones.nombre, promociones.imagen, promociones.descripcion, promociones.puntos, paradas.nombre FROM promociones INNER JOIN paradas ON promociones.parada = paradas.id");
+    $stmt = $conn-> prepare("SELECT promociones.id, promociones.nombre, promociones.imagen, promociones.descripcion, promociones.puntos, paradas.nombre AS parada FROM promociones INNER JOIN paradas ON promociones.parada = paradas.id");
     $stmt -> execute();
     $result = $stmt->fetchAll();
     $conn = disconnect();

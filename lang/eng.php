@@ -1,8 +1,8 @@
 <?php
 
 $lang = array(
-    "points" => "puntos",
-    "" =>"Canjear",
+    "points" => "points",
+    "redeem" =>"Redeem",
     "field_id" => "#",
     "field_email" => "Email",
     "field_rol" => "Rol",
