@@ -41,7 +41,7 @@
 function showTable($type,$lang){
     if($type == 'users'){
         $results = selectAllUsers();
-        $fields = array($lang['field_id'],$lang['field_email'],$lang['field_rol'],$lang['field_name'],$lang['field_surname'],$lang['field_pass'],$lang['field_level'],$lang['field_points']);
+        $fields = array($lang['field_id'],$lang['field_email'],$lang['field_rol'],$lang['field_name'],$lang['field_surname'],$lang['field_level'],$lang['field_points']);
     }
     elseif($type =='promociones'){
         $results = selectAllPromociones();
