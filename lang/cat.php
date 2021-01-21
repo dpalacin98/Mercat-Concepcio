@@ -1,0 +1,27 @@
+<?php
+
+$lang = array(
+    "opcion_1" => "Espanyol",
+    "opcion_2" => "Català",
+    "opcion_3" => "Anglès",
+    "FAQ"      => "FAQ",
+    "Admin"    => "Admin",
+    "Lista"    => "Llista de desitjos",
+    "Juegos"   => "Jocs",
+    "Inicio"   => "Inici",
+    "Paradas"   => "Parades",
+    "Promociones" => "Promocions",
+    "Idioma" => "Idioma",
+    "Cuenta"   => "Compte",
+    "Editar_perfil" => "Editar perfil",
+    "Cerrar" => "Tancar",
+    "Nosotros" => "Sobre nosaltres",
+    "Contacto" => "Contacte",
+    "Iniciar_sesion" => "Iniciar sessió",
+    "Registrarse" => "Registrar-se",
+    "Email" => "Email",
+    "Contraseña" => "Contrasenya",
+    "Usuario" => "Usuari",
+    "Confirmar_contraseña" => "Confirmar contrasenya",
+    "Crear_cuenta" => "Crear compte",
+);

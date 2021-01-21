@@ -20,6 +20,29 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
   else{
     $rol = -1;
   }
+  if (!isset($_SESSION["lang"])){
+ 
+     include $_SERVER['DOCUMENT_ROOT'] .$ruta . "lang/eng.php";
+
+  } 
+  else{
+      if(($_SESSION["lang"]== "es")){
+        include $_SERVER['DOCUMENT_ROOT'] . $ruta . "lang/es.php";
+        header("Location:" . $_SERVER['HTTP_PREFERER']);
+      }
+      elseif($_SESSION["lang"]== "eng"){
+    
+        include $_SERVER['DOCUMENT_ROOT'] . $ruta . "lang/eng.php";
+        header("Location" .  $_SERVER['HTTP_PREFERER']);
+      }
+      elseif ($_SESSION["lang"]== "cat"){
+        include $_SERVER['DOCUMENT_ROOT'] . $ruta . "lang/cat.php";
+        header("Location:" . $_SERVER['HTTP_PREFERER']);
+      }
+      
+
+  }
+  
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +64,8 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
     <!-- NAV -->
    
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">LA CONCEPCIÓ</a>
+    <!-- <a class="navbar-brand" href="#">LA CONCEPCIÓ</a> -->
+    <img src="../../media/logo.png" width="126" height="51">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -52,29 +76,29 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
       <!--inicio izquierdo-->
       <!--Inicio-->
         <li class="nav-item active">
-          <a class="nav-link" href="#"><i class="fas fa-home"></i>  Inicio
+          <a class="nav-link" href="#"><i class="fas fa-home"></i>  <?php echo $lang["Inicio"]?>
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <!--Paradas-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-search-location"></i>  Paradas</a>
+          <a class="nav-link" href="#"><i class="fas fa-search-location"></i> <?php echo $lang["Paradas"]?></a>
         </li>
         <!--Promociones-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-tag"></i>  Promociones</a>
+          <a class="nav-link" href="#"><i class="fas fa-tag"></i> <?php echo $lang["Promociones"]?></a>
         </li>
         <?php if(isset($_SESSION['id'])){?>
 
         <!--Juegos-->
           <li class="nav-item">
-            <a class="nav-link" href=<?php echo $ruta . "php_views/juegos.php"?>><i class="fas fa-gamepad"></i></i>  Juegos</a>
+            <a class="nav-link" href=<?php echo $ruta . "php_views/juegos.php"?>><i class="fas fa-gamepad"></i></i><?php echo $lang["Juegos"]?></a>
           </li>
         <?php }
         ?>
         <!--Lista de deseos-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-heart"></i>  Lista de deseos</a>
+          <a class="nav-link" href="#"><i class="fas fa-heart"></i> <?php echo $lang["Lista"]?></a>
         </li>
         
       </ul>
@@ -84,7 +108,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         <!--Admin-->
         <?php if($rol == 1){?>
           <li class="nav-item">
-          <a class="nav-link" href=<?php echo $ruta . "php_views/administracion.php"?> ><i class="fas fa-cog"></i>  Admin</a>
+          <a class="nav-link" href=<?php echo $ruta . "php_views/administracion.php"?> ><i class="fas fa-cog"></i><?php echo $lang["Admin"]?></a>
           </li>
         <?php 
         
@@ -92,15 +116,16 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         
         <!--FAQ-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="far fa-question-circle"></i>  FAQ</a>
+          <a class="nav-link" href="#"><i class="far fa-question-circle"></i> <?php echo $lang["FAQ"]?></a>
         </li>
         <!--Idiomas-->
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i> Idioma</a>
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-globe"></i> <?php echo $lang["Idioma"]?></a>
           <div class="dropdown-menu" style="background-color: #F49600;">
-            <a class="dropdown-item" href="#" style="color: white;">  Español</a>
-            <a class="dropdown-item" href="#" style="color: white;">  Catalán</a>
-            <a class="dropdown-item" href="#" style="color: white;">  Inglés</a>
+            <a value="es" class="dropdown-item" href="#" style="color: white;"> <?php echo $lang["opcion_1"]?></a>
+            <a value="cat" class="dropdown-item" href="#" style="color: white;"> <?php echo $lang["opcion_2"]?></a>
+            <a value="eng" class="dropdown-item" href="#" style="color: white;"> <?php echo $lang["opcion_3"]?></a>
+            
           </div>
         </li>
       
@@ -110,11 +135,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
           
           <li class="nav-item dropdown">
 
-            <a id="id-cuenta" class="nav-link dropdown-toggle"  data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a>
+            <a id="id-cuenta" class="nav-link dropdown-toggle"  data-toggle="dropdown"  href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> <?php echo $lang["Cuenta"]?></a>
             <div class="dropdown-menu" style="background-color: #F49600;">
             <!--Comprobar si está registrado/iniciado sesión-->
-              <a class="dropdown-item" href="#" style="color: white;">  Editar perfil</a>
-              <a class="dropdown-item" href="logout.php" style="color: white;">  Cerrar sesión</a>
+              <a class="dropdown-item" href="#" style="color: white;">  <?php echo $lang["Editar_perfil"]?></a>
+              <a class="dropdown-item" href="logout.php" style="color: white;">  <?php echo $lang["Cerrar"]?></a>
             </div>
           </li>
         <?php }
@@ -122,7 +147,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         else{ ?>
           <li>
             <!-- <a id="id-cuenta" class="nav-link"  data-toggle="modalInicio" data-target='#modalInicio'  href="#" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a> -->
-            <a id="id-cuenta" class="nav-link" data-toggle="modal" data-target="#modalInicio" href="#"><i class="fas fa-user-alt"></i> Cuenta</a>
+            <a id="id-cuenta" class="nav-link" data-toggle="modal" data-target="#modalInicio" href="#"><i class="fas fa-user-alt"></i> <?php echo $lang["Cuenta"]?></a>
             <!-- <a id="id-cuenta" class="nav-link"  data-toggle="modalInicio" data-target='#modalInicio' href="#" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user-alt"></i> Cuenta</a> -->
           
           </li>
@@ -161,11 +186,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
                                         <div class="row">
                                             <!-- Iniciar sesión -->
                                             <div class="col-xl">
-                                                <a href="#" id="login-form-link" onclick="funcionRegistro()">Iniciar sesión</a>
+                                                <a href="#" id="login-form-link" onclick="funcionRegistro()"><?php echo $lang["Iniciar_sesion"]?></a>
                                             </div>
                                             <!-- Registrarme -->
                                             <div class="col-xl">
-                                                <a href="#"  id="register-form-link"  onclick="funcionInicarSesion()">Registrarse</a>
+                                                <a href="#"  id="register-form-link"  onclick="funcionInicarSesion()"><?php echo $lang["Registrarse"]?></a>
                                             </div>
                                         </div>
                                         <hr>
@@ -180,11 +205,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
                                                     <form id="login-form"  action="<?php echo $ruta . "php_controllers/login.php"?>"  method="post" role="form" style="display: block;">
                                                         <!-- Usuarix -->
                                                         <div class="form-group">
-                                                            <input type="email" name="email" id="emaillogin" tabindex="1" class="form-control" placeholder="E-mail" >
+                                                            <input type="email" name="email" id="emaillogin" tabindex="1" class="form-control" placeholder=<?php echo $lang["Email"]?> >
                                                         </div>
                                                         <!-- Contraseña -->
                                                         <div class="form-group">
-                                                            <input type="password" name="password" id="passwordlogin" tabindex="2" class="form-control" placeholder="Contraseña">
+                                                            <input type="password" name="password" id="passwordlogin" tabindex="2" class="form-control" placeholder=<?php echo $lang["Contraseña"]?>>
                                                         </div>
                                                         <!-- Recordarme
                                                         <div class="form-group text-center">
@@ -195,7 +220,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
                                                         <div class="btn-form-group">
                                                             <div class="row">
                                                                 <div class="col-xl">
-                                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login btn-primary " value="Iniciar sesión">
+                                                                    <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login btn-primary " value="<?php echo $lang["Iniciar_sesion"]?>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -226,22 +251,22 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
                                                     <!-- INICIO FORM REGISTRO -->
                                                     <form id="register-form" action="<?php echo $ruta . "php_controllers/login.php"?>" method="post" role="form">
                                                         <div class="form-group">
-                                                            <input type="text" name="name" id="usernameregistro" tabindex="1" class="form-control" placeholder="Usuario" value="">
+                                                            <input type="text" name="name" id="usernameregistro" tabindex="1" class="form-control" placeholder=<?php echo $lang["Usuario"]?> value="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder="Correo electronico" value="">
+                                                            <input type="email" name="email" id="email" tabindex="1" class="form-control" placeholder=<?php echo $lang["Email"]?> value="">
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="password" name="password" id="passwordresgistro" tabindex="2" class="form-control" placeholder="Contraseña">
+                                                            <input type="password" name="password" id="passwordresgistro" tabindex="2" class="form-control" placeholder=<?php echo $lang["Contraseña"]?>>
                                                         </div>
                                                         <div class="form-group">
-                                                            <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirmar contraseña">
+                                                            <input type="password" name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder=<?php echo $lang["Confirmar_contraseña"]?>>
                                                         </div>
 
                                                         <div class="btn-form-group">
                                                             <div class="row">
                                                                 <div class="col-xl">
-                                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register btn-primary" value="Crear cuenta">
+                                                                    <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register btn-primary" value="<?php echo $lang["Crear_cuenta"]?>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -301,33 +326,33 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
     <!-- Grid column Sobre nosotrxs-->
     <div class="col-md-2 mb-3">
       <h6 class="text-uppercase font-weight-bold">
-        <a href="#!">Sobre nosotrxs</a>
+        <a href="#!"><?php echo $lang["Nosotros"]?></a>
       </h6>
     </div>
     <!-- Grid column Contacto-->
     <div class="col-md-2 mb-3">
       <h6 class="text-uppercase font-weight-bold">
-        <a href="#!">Contacto</a>
+        <a href="#!"><?php echo $lang["Contacto"]?></a>
       </h6>
     </div>
 
     <!-- Grid column Paradas-->
     <div class="col-md-2 mb-3">
       <h6 class="text-uppercase font-weight-bold">
-        <a href="#!">Paradas</a>
+        <a href="#!"><?php echo $lang["Paradas"]?></a>
       </h6>
     </div>
     
     <!-- Grid column Promociones-->
     <div class="col-md-2 mb-3">
       <h6 class="text-uppercase font-weight-bold">
-        <a href="#!">Promociones</a>
+        <a href="#!"><?php echo $lang["Promociones"]?></a>
       </h6>
     </div>
     <!-- Grid column FAQ-->
     <div class="col-md-2 mb-3">
       <h6 class="text-uppercase font-weight-bold">
-        <a href="#!">FAQ</a>
+        <a href="#!"><?php echo $lang["FAQ"]?></a>
       </h6>
     </div>
     
