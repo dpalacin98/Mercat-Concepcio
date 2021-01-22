@@ -23,7 +23,7 @@ function disconnect(){
 
 function selectAllUsers(){
     $conn = connect();
-    $stmt = $conn-> prepare("SELECT * FROM usuarios");
+    $stmt = $conn-> prepare("SELECT id, email, rol, nombre, apellido, nivel, puntos FROM usuarios");
     $stmt -> execute();
     $result = $stmt->fetchAll();
     $conn = disconnect();

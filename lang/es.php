@@ -24,7 +24,8 @@ $lang = array(
     "Usuario" => "Usuarix",
     "Confirmar_contraseña" => "Confirmar contraseña",
     "Crear_cuenta" => "Crear cuenta",
-
+    "points" => "puntos",
+    "" =>"Canjear",
     "field_id" => "#",
     "field_email" => "Email",
     "field_rol" => "Rol",
