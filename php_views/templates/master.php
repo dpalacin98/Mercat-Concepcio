@@ -64,7 +64,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
    
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <!-- <a class="navbar-brand" href="#">LA CONCEPCIÓ</a> -->
-    <img src="../../media/logo.png" width="126" height="51">
+    <img src="<?php echo $ruta . '/media/logo.png'?>" width="126" height="51">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -85,7 +85,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
         </li>
         <!--Promociones-->
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-tag"></i> <?php echo $lang["Promociones"]?></a>
+          <a class="nav-link" href=<?php echo $ruta . "php_views/promociones.php"?>><i class="fas fa-tag"></i> <?php echo $lang["Promociones"]?></a>
         </li>
         <?php if(isset($_SESSION['id'])){?>
 
@@ -126,7 +126,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
             <a value="eng" class="dropdown-item" href="#" style="color: white;"> <?php echo $lang["opcion_3"]?></a>
             
           </div>
-        </li> -->
+        </li>
       
         <!--cuentas-->
         <!-- <button class="btn btn-primary" type="button" data-toggle="modal" data-target='#modal' >MOSTRAR MODAL</button> -->
