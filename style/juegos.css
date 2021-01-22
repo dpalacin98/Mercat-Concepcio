@@ -1,19 +1,28 @@
-.juego{
-    margin-top: 3%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
-}
-.juego>img{
-    height: 600px;
-    width: 1110px;
-}
 .row-select{
     margin-top: 2%;
+}
+.modal-title{
+    margin-left: 33%;
+}
+#mensaje{
+    text-align: center;
+    padding-top: 3%;
+}
+.modal-dialog{
+    margin-top: 350px;
+}
+.modal-footer{
+    display: block;
+    margin: auto;
 }
 .progress{
     margin-top: 2%;
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 2%;
+}
+.divJuego{
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
 }
