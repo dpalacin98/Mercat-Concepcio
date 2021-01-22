@@ -31,30 +31,4 @@
 .hide {
 opacity: 0;
 }
-.juego{
-    margin-top: 3%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 600px;
-}
-.row-select{
-    margin-top: 2%;
-}
-.progress{
-    margin-top: 2%;
-    margin-left: 4%;
-    margin-right: 4%;
-    margin-bottom: 2%;
-}
-.modal-title{
-    margin-left: 170px;
-}
-#mensaje{
-    text-align: center;
-}
-.modal-dialog{
-    margin-top: 350px;
-}
-.modal-footer{
-    padding-right: 30px;
-}
+
