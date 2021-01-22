@@ -1,4 +1,8 @@
 <?php
+if(empty($_SESSION)){
+    session_start();
+}
+
 function connect(){
     include 'config.php';
 

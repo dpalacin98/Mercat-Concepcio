@@ -2,177 +2,179 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //declaramos el boton start para iniciar el juego
     document.getElementById('BtnStart').addEventListener('click', startGame, true);
+    //document.getElementById('BtnTryAgain').addEventListener('click', startGame, true);
     //ocultamos el footer de momento
     document.querySelector('footer').hidden = true;
+
     //Declaramos nuestros arrays con los productos y clientes
     const productArray          = [
         {
             name: 'arandano',
             tipo: 'producto',
-            img: '../media/fruta/arandano.png',
+            img: '../media/fruta-juego4/arandano.png',
             precio:'2.5'
         },
         {
             name: 'cereza',
             tipo: 'producto',
-            img: '../media/fruta/cereza.png',
+            img: '../media/fruta-juego4/cereza.png',
             precio:'4.5'
         },
         {
             name: 'coco',
             tipo: 'producto',
-            img: '../media/fruta/coco.png',
+            img: '../media/fruta-juego4/coco.png',
             precio:'5.0'
         },
         {
             name: 'fresa',
             tipo: 'producto',
-            img: '../media/fruta/fresa.png',
+            img: '../media/fruta-juego4/fresa.png',
             precio:'3.0'
         },
         {
             name: 'mango',
             tipo: 'producto',
-            img: '../media/fruta/mango.png',
+            img: '../media/fruta-juego4/mango.png',
             precio:'2.0'
         },
         {
             name: 'naranja',
             tipo: 'producto',
-            img: '../media/fruta/naranja.png',
+            img: '../media/fruta-juego4/naranja.png',
             precio:'4.0'
         },
         {
             name: 'manzana',
             tipo: 'producto',
-            img: '../media/fruta/manzana.png',
+            img: '../media/fruta-juego4/manzana.png',
             precio:'3.0'
         },
         {
             name: 'pera',
             tipo: 'producto',
-            img: '../media/fruta/pera.png',
+            img: '../media/fruta-juego4/pera.png',
             precio:'3.5'
         },
         {
             name: 'pina',
             tipo: 'producto',
-            img: '../media/fruta/pina.png',
+            img: '../media/fruta-juego4/pina.png',
             precio:'4.5'
         },
         {
             name: 'platanos',
             tipo: 'producto',
-            img: '../media/fruta/platanos.png',
+            img: '../media/fruta-juego4/platanos.png',
             precio:'2.0'
         },
         {
             name: 'sandia',
             tipo: 'producto',
-            img: '../media/fruta/sandia.png',
+            img: '../media/fruta-juego4/sandia.png',
             precio:'6.5'
         },
         {
             name: 'uvas',
             tipo: 'producto',
-            img: '../media/fruta/uvas.png',
+            img: '../media/fruta-juego4/uvas.png',
             precio:'8.5'
         }
     ];
     const clienteArray          = [
         {
             name: 'person1',
-            img: '../media/personas/person.png'
+            img: '../media/personas-juego4/person.png'
         },
         {
             name: 'person2',
-            img: '../media/personas/person2.png'
+            img: '../media/personas-juego4/person2.png'
         },
         {
             name: 'person3',
-            img: '../media/personas/person3.png'
+            img: '../media/personas-juego4/person3.png'
         },
         {
             name: 'person4',
-            img: '../media/personas/person4.png'
+            img: '../media/personas-juego4/person4.png'
         },
         {
             name:'person5',
-            img:'../media/personas/person5.png'
+            img:'../media/personas-juego4/person5.png'
         }
     ];
     const productClienteArray   = [
         {
             name: 'arandano',
-            img: '../media/fruta/fruta-cliente/arandano-cliente.png',
-            img_s: '../media/fruta/fruta-success/arandano-success.png',
-            img_e: '../media/fruta/fruta-error/arandano-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/arandano-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/arandano-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/arandano-error.png'
         },
         {
             name: 'cereza',
-            img: '../media/fruta/fruta-cliente/cereza-cliente.png',
-            img_s: '../media/fruta/fruta-success/cereza-success.png',
-            img_e: '../media/fruta/fruta-error/cereza-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/cereza-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/cereza-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/cereza-error.png'
         },
         {
             name: 'coco',
-            img: '../media/fruta/fruta-cliente/coco-cliente.png',
-            img_s: '../media/fruta/fruta-success/coco-success.png',
-            img_e: '../media/fruta/fruta-error/coco-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/coco-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/coco-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/coco-error.png'
         },
         {
             name: 'fresa',
-            img: '../media/fruta/fruta-cliente/fresa-cliente.png',
-            img_s: '../media/fruta/fruta-success/fresa-success.png',
-            img_e: '../media/fruta/fruta-error/fresa-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/fresa-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/fresa-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/fresa-error.png'
         },
         {
             name: 'mango',
-            img: '../media/fruta/fruta-cliente/mango-cliente.png',
-            img_s: '../media/fruta/fruta-success/mango-success.png',
-            img_e: '../media/fruta/fruta-error/mango-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/mango-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/mango-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/mango-error.png'
         },
         {
             name: 'naranja',
-            img: '../media/fruta/fruta-cliente/naranja-cliente.png',
-            img_s: '../media/fruta/fruta-success/naranja-success.png',
-            img_e: '../media/fruta/fruta-error/naranja-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/naranja-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/naranja-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/naranja-error.png'
         },
         {
             name: 'manzana',
-            img: '../media/fruta/fruta-cliente/manzana-cliente.png',
-            img_s: '../media/fruta/fruta-success/manzana-success.png',
-            img_e: '../media/fruta/fruta-error/manzana-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/manzana-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/manzana-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/manzana-error.png'
         },
         {
             name: 'pera',
-            img: '../media/fruta/fruta-cliente/pera-cliente.png',
-            img_s: '../media/fruta/fruta-success/pera-success.png',
-            img_e: '../media/fruta/fruta-error/pera-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/pera-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/pera-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/pera-error.png'
         },
         {
             name: 'pina',
-            img: '../media/fruta/fruta-cliente/pina-cliente.png',
-            img_s: '../media/fruta/fruta-success/pina-success.png',
-            img_e: '../media/fruta/fruta-error/pina-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/pina-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/pina-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/pina-error.png'
         },
         {
             name: 'platanos',
-            img: '../media/fruta/fruta-cliente/platanos-cliente.png',
-            img_s: '../media/fruta/fruta-success/platanos-success.png',
-            img_e: '../media/fruta/fruta-error/platanos-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/platanos-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/platanos-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/platanos-error.png'
         },
         {
             name: 'sandia',
-            img: '../media/fruta/fruta-cliente/sandia-cliente.png',
-            img_s: '../media/fruta/fruta-success/sandia-success.png',
-            img_e: '../media/fruta/fruta-error/sandia-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/sandia-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/sandia-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/sandia-error.png'
         },
         {
             name: 'uvas',
-            img: '../media/fruta/fruta-cliente/uvas-cliente.png',
-            img_s: '../media/fruta/fruta-success/uvas-success.png',
-            img_e: '../media/fruta/fruta-error/uvas-error.png'
+            img: '../media/fruta-juego4/fruta-cliente/uvas-cliente.png',
+            img_s: '../media/fruta-juego4/fruta-success/uvas-success.png',
+            img_e: '../media/fruta-juego4/fruta-error/uvas-error.png'
         }
     ];
 
@@ -187,36 +189,47 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDisplay             = document.querySelector('#result');
     const sumaDisplay               = document.querySelector('#suma');
     const background                = document.querySelector('.juego');
-
-    //declaramos las variables con las que vamos a trabajar
-    let currentTime                 = timeLeft.textContent;
-    var productChosen               = [];
-    var productDemandaId            = [];
-    var productIdVenta              = [];
-    var ganancia                    = 0;
-    var contador                    = 1;
-    var id_cliente                  = 0;
-    var id_producto                 = 0;
-    var productClass                = null;
+    const puntosDisplay             = document.querySelector('#mensaje');
 
     //ponemos en hidden los marcadores mientras dure el menu
     document.querySelector('h4').hidden         = true;
     document.getElementById('seconds').hidden   = true;
     document.getElementById('time-left').hidden = true;
     //ponemos el fondo de menu
-    background.style.backgroundImage="url(../media/menu.png)";
-
-
+    background.style.backgroundImage="url(../media/background-juego4/menu.png)";
+    
     function startGame(){
 
-        //ocultamos boton para inicar el juego
-        document.getElementById('BtnStart').remove();
-        //cambiamos el fondo al fondo del juego 
-        background.style.backgroundImage=" url(../media/imagen-juego-final.png)";
+        //declaramos las variables con las que vamos a trabajar
+        let currentTime                 = timeLeft.textContent;
+        var productChosen               = [];
+        var productDemandaId            = [];
+        var productIdVenta              = [];
+        var ganancia                    = 0;
+        var contador                    = 1;
+        var id_cliente                  = 0;
+        var id_producto                 = 0;
+        var productClass                = null;
+
+        //comprobamos que el boton esté para borrarlo o no borramos el boton al inicar el juego
+        if(document.getElementById('BtnStart') != null){
+            document.getElementById('BtnStart').remove();
+        }
+
+        background.style.backgroundImage=" url(../media/background-juego4/imagen-juego.png)";
         //volvemos a mostrar los marcadores ahora que el juego se ha iniciado
         document.querySelector('h4').hidden         = false;
         document.getElementById('seconds').hidden   = false;
         document.getElementById('time-left').hidden = false;
+
+        /// Get the modal
+        var modal = document.getElementById("myModal");
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
 
         //creamos la grid con los productos
         function createBoardProductos(){
@@ -237,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 contador = 0;
             }
             //añadimos un cliente cada X segundos
-            if (contador == 2) {
+            if (contador == 1) {
                 //si hay 5 clientes en la tabla paramos
                 if (id_cliente == 5) {
                     id_cliente = 0;
@@ -283,7 +296,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (currentTime === 0) {
                 clearInterval(timer);
                 clearInterval(timerClient);
-                alert("GAME OVER");
+                //alert("GAME OVER");
+                puntosDisplay.textContent   = "HAS GANADO UN TOTAL DE " + ganancia + " PUNTOS";
+                modal.style.display         = "block";
             };
         }
         let timer = setInterval(cuentaAtras, 1000);
@@ -312,7 +327,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 //como el match ha sido correcto, cambiamos la imagen a img_success
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_s);
 
-                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 4000);
             } else{ 
                 //si no hace match no sumamos nada, mostramos que suma 0$
                 sumaDisplay.textContent = ' + 0$';
@@ -320,7 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(function(){document.getElementById("suma").style.visibility="hidden"}, 2000);
                 //como el match NO ha sido correcto, cambiamos la imagen a img_error
                 productoChosen.setAttribute('src', productClienteArray[productDemandaId[0]].img_e);
-                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 1500);
+                setTimeout(function(){ productoChosen.remove(); clientChosen.remove();}, 4000);
 
             }      
             //vaciamos los array para el siguiente producto
@@ -357,7 +372,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(checkForMatch, 100);
             }
         }
-
 
         createBoardProductos();
     }  

@@ -1,8 +1,34 @@
-products = ["carne","gamba","cangrejo","pez","pez2","girasol","queso","queso2","queso3"];
+products = ["carne","alitas","salchicha","bacon","gamba","cangrejo","pez","pez2","girasol","planta","cactus","queso","queso2","queso3","sandia","platanos","fresa","cereza","tomate","brocoli","eggplant","zanahoria","carnivora"];
 aux = 0;
 time = -1;
 points = 0;
+vdialogo = 0;
 var drag;
+//ocultamos el footer de momento
+document.querySelector('footer').hidden = true;
+// document.getElementById("divBox").hidden = "true";
+document.getElementById("divBox").style.display = "none"
+document.getElementById("food").style.height = "370px"
+var button = document.createElement("button")
+var div = document.createElement("div")
+div.classList.add("ml-auto")
+button.classList.add("btn")
+button.classList.add("btn-primary")
+button.classList.add("m-4")
+button.innerHTML = "Siguiente"
+button.addEventListener("click",dialogo)
+document.getElementById('food').appendChild(div);
+div.appendChild(button)
+//Cogemos el div con el mensaje del modal
+const puntosDisplay             = document.querySelector('#mensaje');
+/// Get the modal
+var modal = document.getElementById("myModal");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
 function openBox(){
     aux = 0;
@@ -41,12 +67,12 @@ function random(min, max) {
 }
 
 function checkProduct(product,shop){
-    var meat = ["carne"];
+    var meat = ["carne","alitas","salchicha","bacon"];
     var fish = ["gamba","cangrejo","pez","pez2"];
-    var plants = ["girasol"];
+    var plants = ["girasol","planta","cactus","carnivora"];
     var cheese = ["queso","queso2","queso3"];
-    var fruit = ["pepe"];
-    var vegetable = ["pepe2"];
+    var fruit = ["sandia","platanos","fresa","cereza","tomate"];
+    var vegetable = ["brocoli","eggplant","zanahoria"];
     var products;
     var result = true;
     switch(shop){
@@ -93,7 +119,7 @@ for(var i = 0; i < market_stop.length;i++){
         })
 }
 function timer(){
-    time = 90;
+    time = 5;
     var timer = document.getElementById("timer")
     var intervalTime = setInterval(function(){
         if(time>=0){
@@ -103,7 +129,9 @@ function timer(){
                 timer.style.color = "red"
             }
         }
-        else{clearInterval(intervalTime);}
+        else{clearInterval(intervalTime);
+        puntosDisplay.textContent   = "HAS GANADO UN TOTAL DE " + points + " PUNTOS";
+        modal.style.display         = "block";}
     checkDivFood()
     },1000)
 }
@@ -114,5 +142,20 @@ function checkDivFood(){
     if(products.length == 0){
         textPoints.innerHTML = points
         openBox()
+    }
+}
+function dialogo(){
+    if(vdialogo !=1){
+        document.getElementById("food").style.backgroundImage = "url('../media/juego3dialogo2.png')";
+        button.innerHTML = "Iniciar juego"
+        vdialogo = 1
+    }
+    else{
+        button.hidden = "true"
+        document.getElementById("food").style.backgroundImage = "none"
+        document.getElementById("food").style.height = null
+        document.getElementById("divBox").style.display = "block"
+        document.getElementById("divBox").style.backgroundColor ="#5DC7BD";
+        div.classList.remove("ml-auto")
     }
 }

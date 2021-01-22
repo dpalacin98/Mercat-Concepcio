@@ -1,82 +1,20 @@
-.row-select{
-    margin-top: 2%;
-}
 .juego{
     margin-top: 3%;
     background-repeat: no-repeat;
     background-size: cover;
     height: 600px;
+    margin-bottom: 60px;
 }
-
-h4{
-    margin-top: 16px;
-    margin-left: 80px;
+.juego>img{
+    height: 600px;
+    width: 1110px;
 }
-#seconds{
-    margin-top: 16px;
-    margin-left: 40px;
-}
-#time-left{
-    margin-top: 16px;
-    margin-left: -100px;
-}
-h5{
-    margin-top: 18px;
-    margin-left: -65px;
+.row-select{
+    margin-top: 2%;
 }
 .progress{
     margin-top: 2%;
     margin-left: 4%;
     margin-right: 4%;
     margin-bottom: 2%;
-}
-.row-puntos{
-    height: 75px;
-}
-.row-productos{
-    height: 225px;
-}
-.grid{
-    display: flex;
-    flex-wrap: wrap;
-    height: 60px;
-    width: 450px;
-    margin-left: 380px;
-    margin-top: 60px;
-}
-.grid>img{
-    width: 60px;
-    height: 60px;
-    margin-bottom: 15px;
-    margin-right: 14px;
-}
-.grid-productos{
-    display: flex;
-    flex-wrap: wrap;
-    height: 75px;
-    width: 1200px;
-    margin-top: -25px;
-}
-.grid-productos>img{
-    width: 80px;
-    height: 80px;
-    margin-left: 120px;
-    margin-right: 5px;
-}
-.grid-clientes{
-    display: flex;
-    flex-wrap: wrap;
-    height: 250px;
-    width: 1200px;
-}
-.grid-clientes>img{
-    width: 170px;
-    height: 250px;
-    margin-left: 35px;
-}
-#BtnStart{
-    margin-top: 75px;
-    margin-left: 150px;
-    height: 100px;
-    width: 300px;
 }
