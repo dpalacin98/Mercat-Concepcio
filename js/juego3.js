@@ -19,15 +19,16 @@ button.innerHTML = "Siguiente"
 button.addEventListener("click",dialogo)
 document.getElementById('food').appendChild(div);
 div.appendChild(button)
+document.getElementById('BtnKeep').addEventListener('click', keepPoints, true)
 //Cogemos el div con el mensaje del modal
 const puntosDisplay             = document.querySelector('#mensaje');
-/// Get the modal
-var modal = document.getElementById("myModal");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-// When the user clicks on <span> (x), close the modal
+// Recogemos el modal
+var modal = document.getElementById("myModal")
+// Cogemos el span que tiene la X para cerrar el modal
+var span = document.getElementsByClassName("close")[0]
+// onclick en el span para cerrarlo
 span.onclick = function() {
-    modal.style.display = "none";
+    modal.style.display = "none"
 }
 
 function openBox(){
@@ -119,7 +120,7 @@ for(var i = 0; i < market_stop.length;i++){
         })
 }
 function timer(){
-    time = 5;
+    time = 50;
     var timer = document.getElementById("timer")
     var intervalTime = setInterval(function(){
         if(time>=0){
@@ -158,4 +159,21 @@ function dialogo(){
         document.getElementById("divBox").style.backgroundColor ="#5DC7BD";
         div.classList.remove("ml-auto")
     }
+}
+
+function keepPoints(){
+    const bar           = document.querySelector('.progress-bar')
+    var aux = bar.textContent
+    bar.textContent     = (points + parseInt(aux)) + "%"
+
+    document.getElementById("progress-bar").style.width = bar.textContent
+    points = 0
+    modal.style.display = "none"
+    var game3           = document.getElementById("juego3")
+    var game4           = document.getElementById("juego4")
+
+    game3.style.display = "none"
+
+    game4.style.display = "block"
+
 }

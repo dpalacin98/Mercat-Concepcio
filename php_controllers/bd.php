@@ -133,7 +133,6 @@ function deleteAPromocion($id){
     $stmt -> execute();
     $conn=disconnect();
 }
-
 //Funcion Select Puntos juego
 function selectTipoJuego(){
     $conn = connect();
@@ -163,4 +162,3 @@ function selectAllParadas(){
     $conn = disconnect();
     return $result;
 }
-// var_dump(selectAllUsers());
