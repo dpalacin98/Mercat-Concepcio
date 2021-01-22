@@ -1,0 +1,112 @@
+
+.progress{
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+.modal-title{
+    margin-left: 170px;
+}
+#mensaje{
+    text-align: center;
+}
+.modal-dialog{
+    margin-top: 350px;
+}
+.modal-footer{
+    padding-right: 30px;
+}
+
+
+
+/* #divBox{
+    background-color:#5d70c7;
+    top:0;
+} */
+body{
+    background-color: rgb(95, 137, 161);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.juego{
+    margin-top: 3%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+.progress{
+    margin-top: 2%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-bottom: 2%;
+}
+.modal-title{
+    margin-left: 170px;
+}
+#mensaje{
+    text-align: center;
+}
+.modal-dialog{
+    margin-top: 350px;
+}
+.modal-footer{
+    padding-right: 30px;
+}
+
+.container{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.title{
+    margin: 0 0 1rem;
+    padding: 1rem;
+    color: white;
+    
+}
+.plantas{
+    text-align: center;
+    margin: 20px;
+    display:block;
+    cursor:pointer;
+}
+.virus{
+    text-align: center;
+    margin: 20px;
+    display:block;
+    cursor:pointer;
+}
+.tablero{
+    background-color: white;
+    text-align: center;
+    cursor:pointer;
+    position: relative;
+}
+.casilla{
+    width: 119,59px;
+    height: 116,81px;
+    border: 1px;
+    border-color: white;
+	position: absolute;
+	cursor: pointer;
+}
+.active{
+    background-color: white;
+    border-color: white;
+    border-radius: 1px;
+    color: black;
+}
+.verde_oscuro{
+    background-color: #549514;
+}
+.verde_claro{
+    background-color: #A4C400;
+}
+.oscuro{
+    background-color: #549514;
+
+}
+.claro{
+    background-color: #A4C400;
+}
