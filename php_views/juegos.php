@@ -24,7 +24,7 @@ Juegos
   <!-- SELECT JUEGOS -->
   <div class="row row-select">  
     <div class="col">
-      <img id="imgJuego2" src="../media/outofservice.png" height="75%" width="80%" style="margin:auto; display: block;">
+      <a href="juego2.php"><img id="imgJuego2" src="../media/outofservice.png" height="75%" width="80%" style="margin:auto; display: block;"></a>
     </div>
     <div class="col">
       <img id="imgJuego3" src="../media/background-juego4/click-juego3.png" height="75%" width="80%" style="margin:auto; display: block;">

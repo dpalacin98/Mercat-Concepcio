@@ -21,7 +21,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
   }
   if (!isset($_SESSION["lang"])){
  
-     include $_SERVER['DOCUMENT_ROOT'] .$ruta . "lang/eng.php";
+     include $_SERVER['DOCUMENT_ROOT'] .$ruta . "lang/es.php";
 
   } 
   else{
@@ -64,7 +64,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $ruta.'php_libraries/ti.php';
    
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <!-- <a class="navbar-brand" href="#">LA CONCEPCIÓ</a> -->
-    <img src="<?php echo $ruta . '/media/logo.png'?>" width="126" height="51">
+    <a href=<?php echo $ruta . "index.php"?>><img src="<?php echo $ruta . '/media/logo.png'?>" width="126" height="51"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
