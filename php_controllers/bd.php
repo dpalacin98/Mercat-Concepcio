@@ -91,16 +91,16 @@ function deleteAUser($id){
 
 function selectAllPromociones(){
     $conn = connect();
-    $stmt = $conn-> prepare("SELECT promociones.id, promociones.nombre, promociones.imagen, promociones.descripcion, promociones.puntos, paradas.nombre FROM promociones INNER JOIN paradas ON promociones.parada = paradas.id");
+    $stmt = $conn-> prepare("SELECT promociones.id, promociones.titulo, promociones.imagen, promociones.descripcion, promociones.puntos, promociones.valor, promociones. tipo, paradas.nombre as nombreParada, tipo_parada.nombre as tipoNombre FROM promociones INNER JOIN paradas ON promociones.parada = paradas.id INNER JOIN tipo_parada ON paradas.tipo = tipo_parada.id");
     $stmt -> execute();
     $result = $stmt->fetchAll();
     $conn = disconnect();
     $fields = $stmt->columnCount();
-    return array($result,$fields);
+    return array($result);
 }
 function insertAPromocion($nombre,$imagen,$descripcion,$parada,$puntos){
     $conn = connect();
-    $stmt = $conn -> prepare("INSERT INTO promociones (nombre, imagen, descripcion, puntos, valor, tipo, parada) VALUES (:nombre, :imagen, :descripcion, :puntos, :valor, :tipo, :parada)");
+    $stmt = $conn -> prepare("INSERT INTO promociones (titulo, imagen, descripcion, puntos, valor, tipo, parada) VALUES (:nombre, :imagen, :descripcion, :puntos, :valor, :tipo, :parada)");
     $stmt->bindParam(':nombre',$nombre);
     $stmt->bindParam(':imagen',$imagen);
     $stmt->bindParam(':descripcion',$descripcion);
