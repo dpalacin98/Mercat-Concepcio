@@ -80,11 +80,11 @@ Juegos
             <div class="row p-3" id="plantas" class="plantas" >
                 <!-- div para la plantas -->
                 <div id="plantas" class="plantas" draggable="true" style= margin:30px>
-                    <img id="bambu" class="plantas" src=<?php echo $ruta . "media/juego2/bambu.png"?> width="100" height="100"alt="bambu">
-                    <img id="cactus" class="plantas" src=<?php echo $ruta . "media/juego2/cactus.svg"?> width="100" height="100"alt="cactus">
-                    <img id="girasol" class="plantas" src=<?php echo $ruta . "media/juego2/girasol.svg"?>width="100" height="100"alt="girasol">
-                    <img id="planta" class="plantas" src=<?php echo $ruta . "media/juego2/planta.svg"?> width="100" height="100"alt="planta">
-                    <img id="planta-carvivora" class="plantas" src=<?php echo $ruta . "media/juego2/planta-carnivora.svg"?> width="100" height="100"alt="planta-carnivora">
+                    <img id="bambu" class="plantas" src="../media/juego2/bambu.png" width="100" height="100"alt="bambu">
+                    <img id="cactus" class="plantas" src="../media/juego2/cactus.svg" width="100" height="100"alt="cactus">
+                    <img id="girasol" class="plantas" src="../media/juego2/girasol.svg" width="100" height="100"alt="girasol">
+                    <img id="planta" class="plantas" src="../media/juego2/planta.svg" width="100" height="100"alt="planta">
+                    <img id="planta-carvivora" class="plantas" src="../media/juego2/planta-carnivora.svg" width="100" height="100"alt="planta-carnivora">
                 </div>
             </div>
             <div class="row p-3" >
@@ -138,8 +138,8 @@ Juegos
             <!-- DIV para virus -->
             <div class="row p-3" id="virus" class="virus"></div>
                 <div id="virus" class="div-virus" draggable="true">
-                    <img id="virus" class="virus" src=<?php echo $ruta . "media/juego2/coronavirus.svg"?>width="100" height="100"alt="">
-                    <img id="virus" class="virus" src=<?php echo $ruta . "media/juego2/coronavirus2.svg"?> width="100" height="100"alt="">
+                    <img id="virus" class="virus" src="../media/juego2/coronavirus.svg" width="100" height="100"alt="">
+                    <img id="virus" class="virus" src="../media/juego2/coronavirus2.svg"  width="100" height="100"alt="">
                 </div>
 
             </div>
